@@ -17,8 +17,10 @@ from django.conf.urls import url
 from django.contrib import admin
 from account.views import message
 
+
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^message/$', message),
-
+    url(r'^message/$',message,name='message'),
+  #  url(r'^xadmin/',include(xadmin.site.urls)),
 ]
