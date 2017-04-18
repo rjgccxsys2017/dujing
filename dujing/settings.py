@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'account',
     'xadmin',
-    'crispy_forms'
+    'crispy_forms',
+    'DjangoUeditor',
 ]
 
 MIDDLEWARE_CLASSES = [
