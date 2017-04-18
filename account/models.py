@@ -1,3 +1,4 @@
+# -*-coding:utf-8 -*-
 from __future__ import unicode_literals
 
 from django.db import models
@@ -11,6 +12,7 @@ class UserMessage(models.Model):
 	message = models.CharField(max_length = 500,verbose_name="liuyan")
 
 	class Meta:
-		verbose_name = "yonghu_message"
+		verbose_name = u"用户留言"
+		verbose_name_plural = verbose_name
 
 		
