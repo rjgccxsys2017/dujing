@@ -3,17 +3,19 @@ from __future__ import unicode_literals
 
 from django.db import models
 from DjangoUeditor.models import UEditorField
-
+from django.contrib.auth.models import AbstractUser
 # Create your models here.
-class UserMessage(models.Model):
-	object_id = models.CharField(max_length=100,primary_key=True,default=" ",verbose_name="mainkey")
-	name = models.CharField(max_length = 20,verbose_name=u"名字")
-	email = models.EmailField(verbose_name=u"邮箱")
-	address = models.CharField(max_length = 30,verbose_name=u"地址")
-	message = models.CharField(max_length = 300,verbose_name=u"评论")
-	#message = models.Content=UEditorField(max_length = 500,verbose_name=u'内容',width=600, height=300, toolbars="full", imagePath="", filePath="", upload_settings={"imageMaxSize":1204000},
-            # default='')
 
+
+class UserProfile(AbstractUser):
+	nick_name = models.CharField(max_length=50,verbose_name=u"昵称",default="")
+	birday = models.DateField(verbose_name=u"生日",null=True,blank=True)
+	gender = models.CharField(max_length=50,choices=(("male",u"男"),("female",u"女")),default="female")
+	address = models.CharField(max_length=100,default="")
+	mobile = models.CharField(max_length=11,null=True,blank=True)
+	image = models.ImageField(upload_to="image/%Y/%m",default="image/default.png",max_length=100)
 	class Meta:
-		verbose_name = u"用户评论"
+		verbose_name = u"用户信息"
 		verbose_name_plural = verbose_name
+	def  __unicode__(self):
+		return self.username

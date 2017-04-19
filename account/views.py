@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import UserMessage
+from .models import UserProfile
 # Create your views here.
 def message(request):
 

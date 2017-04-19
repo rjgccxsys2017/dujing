@@ -2,10 +2,9 @@
 
 #Register your models here.
 import xadmin
-from .models import UserMessage
+from .models import UserProfile
 
-
-class UserMessageAdmin(object):
+class UserProfileAdmin(object):
 	pass
 	
-xadmin.site.register(UserMessage,UserMessageAdmin)
+xadmin.site.register(UserProfile,UserProfileAdmin)
