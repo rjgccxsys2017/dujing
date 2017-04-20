@@ -3,16 +3,25 @@ from .models import Comments,UserFavorite,UserMessage
 from account.models import UserProfile
 
 class CommentsAdmin(object):
-	pass
-	
-xadmin.site.register(Comments,CommentsAdmin)
+	list_display = ['user','add_time','comments']
+	search_fields = ['user','add_time','comments']
+	list_filter = ['user','add_time','comments']
+
 
 class UserFavoriteAdmin(object):
-	pass
+	list_display = ['user','fav_id','fav_type','add_time']
+	search_fields = ['user','fav_id','fav_type','add_time']
+	list_filter = ['user','fav_id','fav_type','add_time']
 	
-xadmin.site.register(UserFavorite,UserFavoriteAdmin)
+
 
 class UserMessageAdmin(object):
-	pass
-	
+
+	list_display = ['user','message','has_read','add_time']
+	search_fields = ['user','message','has_read','add_time']
+	list_filter = ['user','message','has_read','add_time']
+
+
 xadmin.site.register(UserMessage,UserMessageAdmin)
+xadmin.site.register(UserFavorite,UserFavoriteAdmin)
+xadmin.site.register(Comments,CommentsAdmin)
