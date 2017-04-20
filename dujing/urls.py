@@ -16,13 +16,17 @@ Including another URLconf
 from django.conf.urls import include
 from django.conf.urls import url
 #from django.contrib import admin
-from account.views import message
 
+from django.views.generic import TemplateView
 import xadmin
+
+from account.views import user_login
 
 urlpatterns = [
     url(r'^xadmin/', include(xadmin.site.urls)),
-    url(r'^message/$',message,name='message'),
+   # url(r'^message/$',message,name='message'),
     url(r'^ueditor/',include('DjangoUeditor.urls')),
+    url('^$',TemplateView.as_view(template_name="index.html"),name="index"),
+    url('^login/$',user_login,name="login"),
   #  url(r'^xadmin/',include(xadmin.site.urls)),
 ]
