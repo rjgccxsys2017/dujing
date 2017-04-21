@@ -6,7 +6,7 @@ from django.contrib.auth import authenticate,login
 from django.contrib.auth.backends import ModelBackend
 from django.views.generic.base import View
 from .models import UserProfile
-from .forms import loginForm
+from .forms import loginForm,registerForm
 #
 class CustomBackend(ModelBackend):
 	def authenticate(self,username=None,password=None,**kwargs):
@@ -17,6 +17,11 @@ class CustomBackend(ModelBackend):
 		except Exception as e:
 			return None
 
+
+class registerView(View):
+	def get(self,request):
+		register_form = registerForm()
+		return render(request,"register.html",{'register_form':register_form})
 
 class loginView(View):
 	def get(self,request):

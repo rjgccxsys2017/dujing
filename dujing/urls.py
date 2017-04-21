@@ -20,7 +20,7 @@ from django.conf.urls import url
 from django.views.generic import TemplateView
 import xadmin
 
-from account.views import loginView
+from account.views import loginView,registerView
 
 urlpatterns = [
     url(r'^xadmin/', include(xadmin.site.urls)),
@@ -28,5 +28,7 @@ urlpatterns = [
     url(r'^ueditor/',include('DjangoUeditor.urls')),
     url('^$',TemplateView.as_view(template_name="index.html"),name="index"),
     url('^login/$',loginView.as_view(),name="login"),
-  #  url(r'^xadmin/',include(xadmin.site.urls)),
+    url('^register/$',registerView.as_view(),name="register"),
+    url(r'^captcha/',include('captcha.urls')),
+
 ]
