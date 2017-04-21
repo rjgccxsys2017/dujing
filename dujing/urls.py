@@ -20,13 +20,13 @@ from django.conf.urls import url
 from django.views.generic import TemplateView
 import xadmin
 
-from account.views import user_login
+from account.views import loginView
 
 urlpatterns = [
     url(r'^xadmin/', include(xadmin.site.urls)),
    # url(r'^message/$',message,name='message'),
     url(r'^ueditor/',include('DjangoUeditor.urls')),
     url('^$',TemplateView.as_view(template_name="index.html"),name="index"),
-    url('^login/$',user_login,name="login"),
+    url('^login/$',loginView.as_view(),name="login"),
   #  url(r'^xadmin/',include(xadmin.site.urls)),
 ]
