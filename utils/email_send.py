@@ -2,6 +2,7 @@
 from account.models import EmailVerifyRecord
 from django.core.mail import send_mail
 from dujing.settings import EMAIL_FROM
+from random import Random
 
 def send_register_email(email,send_type="register"):
 	email_record = EmailVerifyRecord()
@@ -16,9 +17,9 @@ def send_register_email(email,send_type="register"):
 	email_body = ""
 
 	if send_type == "register":
-		email_title = "dujingwangzhaixianjihuolianjie"
-		email_body = "qingdainjixiamiandelianjiejihuonidezhanghao:http://127.0.0.0.1:8000/active/{0}.format(code)"
-		send_status=send_email(email_title,email_body,EMAIL_FROM,[email])
+		email_title = "独景网邮箱激活"
+		email_body = "请点击以下链接激活帐号: http://127.0.0.1:8000/active/{0}".format(code)
+		send_status=send_mail(email_title,email_body,EMAIL_FROM,[email])
 		if send_status:
 			pass
 

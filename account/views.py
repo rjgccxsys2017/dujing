@@ -1,14 +1,17 @@
-from django.shortcuts import render
-from .models import UserProfile
-from django.contrib.auth import authenticate,login
+# -*-coding:utf-8 -*-
+from django.contrib.auth import authenticate, login
 # Create your views here.
-# 
+#
 from django.contrib.auth.backends import ModelBackend
-from django.views.generic.base import View
-from .models import UserProfile
-from .forms import loginForm,registerForm
 from django.contrib.auth.hashers import make_password
+from django.shortcuts import render
+from django.views.generic.base import View
+
 from utils.email_send import send_register_email
+from .forms import loginForm,registerForm
+from .models import UserProfile,EmailVerifyRecord
+
+
 #
 class CustomBackend(ModelBackend):
 	def authenticate(self,username=None,password=None,**kwargs):
@@ -20,10 +23,23 @@ class CustomBackend(ModelBackend):
 			return None
 
 
+class ActiveUserView(View):
+	def get(self,request,active_code):
+		all_records = EmailVerifyRecord.objects.filter(code=active_code)
+		if all_records:
+			for record in all_records:
+				email = record.email
+				user = UserProfile.objects.get(email=email)
+				user.is_active = True
+				user.save()
+			return render(request,"login.html")
+
 class registerView(View):
+
 	def get(self,request):
 		register_form = registerForm()
 		return render(request,"register.html",{'register_form':register_form})
+
 	def post(self,request):
 		register_form = registerForm(request.POST)
 		if register_form.is_valid():
@@ -31,14 +47,15 @@ class registerView(View):
 			pass_word = request.POST.get("password","")
 			user_profile = UserProfile()
 			user_profile.username = user_name
-			user_profile.email = user_name
+			user_profile.email   = user_name
 			user_profile.password = make_password(pass_word)
 			user_profile.save()
 			
 			send_register_email(user_name,"register")
 			return render(request,"login.html")
 		else:
-			return render(request,"register.html")
+
+			return render(request,"register.html",{"register_form":register_form})
 
 
 
@@ -52,10 +69,13 @@ class loginView(View):
 			pass_word = request.POST.get("password","")
 			user = authenticate(username=user_name,password=pass_word)
 			if user is not None:
-				login(request,user)
-				return render(request,"index.html")
+				if user.is_active:
+					login(request,user)
+					return render(request,"index.html")
+				else:
+					return render(request, "login.html", {"msg": "用户名或密码错误!"})
 			else:
-				return render(request,"login.html",{"msg":"error log in !"})
+				return render(request,"login.html",{"msg":"用户名或密码错误!"})
 
 		else:
 			return render(request,"login.html",{"login_form":login_form})
@@ -73,7 +93,7 @@ def user_login(request):
 			return render(request,"index.html")
 
 		else:
-			return render(request,"login.html",{"msg":"error log in !"})
+			return render(request,"login.html",{"msg":"用户名或密码错误!"})
 
 
 	elif request.method == "GET":
