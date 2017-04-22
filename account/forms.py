@@ -10,4 +10,4 @@ class loginForm(forms.Form):
 class registerForm(forms.Form):
 	email = forms.EmailField(required=True)
 	password = forms.CharField(required=True,min_length = 5 )
-	captcha = CaptchaField()
+	captcha = CaptchaField(error_messages={"invalid":"yanzhengmacuowu"})

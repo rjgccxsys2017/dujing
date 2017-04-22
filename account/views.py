@@ -7,6 +7,8 @@ from django.contrib.auth.backends import ModelBackend
 from django.views.generic.base import View
 from .models import UserProfile
 from .forms import loginForm,registerForm
+from django.contrib.auth.hashers import make_password
+from utils.email_send import send_register_email
 #
 class CustomBackend(ModelBackend):
 	def authenticate(self,username=None,password=None,**kwargs):
@@ -22,6 +24,23 @@ class registerView(View):
 	def get(self,request):
 		register_form = registerForm()
 		return render(request,"register.html",{'register_form':register_form})
+	def post(self,request):
+		register_form = registerForm(request.POST)
+		if register_form.is_valid():
+			user_name = request.POST.get("email","")
+			pass_word = request.POST.get("password","")
+			user_profile = UserProfile()
+			user_profile.username = user_name
+			user_profile.email = user_name
+			user_profile.password = make_password(pass_word)
+			user_profile.save()
+			
+			send_register_email(user_name,"register")
+			return render(request,"login.html")
+		else:
+			return render(request,"register.html")
+
+
 
 class loginView(View):
 	def get(self,request):
