@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title></title>
     <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/static/wangUeditor/dist/css/wangEditor.min.css">
 	<style>
 		.smart-green {
 			margin-left: auto;
@@ -98,7 +99,7 @@
 	</style>
 </head>
 <body>
-<form action="{% url 'message' %}" method="post" class="smart-green">
+<form action="/liuyan/" method="post" class="smart-green">
     <h1>留言信息
         <span>请留下你的信息.</span>
     </h1>
@@ -123,7 +124,9 @@
     <label>
         <span>留言 :</span>
         <textarea id="message" name="message"  placeholder="请输入你的建议"></textarea>
+
         <div class="error-msg"></div>
+       
     </label>
     <div class="success-msg"></div>
     <label>
@@ -133,6 +136,7 @@
     <input type='hidden' name='csrfmiddlewaretoken' value='SfHkbL4feo1G00sJQtbO7TtLN4c2BUwa' />
     {% csrf_token %}
 </form>
-
+<script type="text/javascript" src="/static/wangUeditor/dist/js/lib/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="/static/wangUeditor/dist/js/wangEditor.min.js"></script>
 </body>
 </html>

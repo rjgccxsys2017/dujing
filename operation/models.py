@@ -1,7 +1,7 @@
 # -*-coding:utf-8 -*-
 from __future__ import unicode_literals
 from datetime import datetime
-
+from DjangoUeditor.models import UEditorField
 from django.db import models
 
 from account.models import UserProfile
@@ -31,7 +31,7 @@ class UserFavorite(models.Model):
 
 class UserMessage(models.Model):
 	user = models.IntegerField(default=0,verbose_name=u"接收用户")
-	message = models.CharField(max_length=500,verbose_name=u"消息内容")
+	message = UEditorField(width=600, height=300,imagePath="message/ueditor/", filePath="message/ueditor/",verbose_name=u"消息内容",default='')
 	has_read = models.BooleanField(default=False,verbose_name=u"是否已读")
 	add_time = models.DateTimeField(default=datetime.now,verbose_name=u"收藏时间")
 	class Meta:

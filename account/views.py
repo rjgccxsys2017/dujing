@@ -12,7 +12,9 @@ from .forms import loginForm,registerForm
 from .models import UserProfile,EmailVerifyRecord
 
 
-#
+def liuyan(request):
+	return render(request,"liuyanban.html")
+
 class CustomBackend(ModelBackend):
 	def authenticate(self,username=None,password=None,**kwargs):
 		try:
@@ -103,3 +105,4 @@ def user_login(request):
 
 	elif request.method == "GET":
 		return render(request,"login.html",{})
+

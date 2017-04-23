@@ -36,5 +36,3 @@ class EmailVerifyRecord(models.Model):
 		return '{0}({1})'.format(self.code,self.email)
 
 
-
-		

@@ -20,6 +20,7 @@ class UserMessageAdmin(object):
 	list_display = ['user','message','has_read','add_time']
 	search_fields = ['user','message','has_read','add_time']
 	list_filter = ['user','message','has_read','add_time']
+	style_fields = {"message":"ueditor"}
 
 
 xadmin.site.register(UserMessage,UserMessageAdmin)
