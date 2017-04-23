@@ -8,7 +8,7 @@ from django.shortcuts import render
 from django.views.generic.base import View
 
 from utils.email_send import send_register_email
-from .forms import loginForm,registerForm
+from .forms import loginForm,registerForm,forgetForm
 from .models import UserProfile,EmailVerifyRecord
 
 
@@ -35,7 +35,7 @@ class ActiveUserView(View):
 				user.is_active = True
 				user.save()
 		else:
-			return render(request,"404.html")
+			return render(request,"404.html")#lianjie shi xiao
 		return render(request,"login.html")
 
 class registerView(View):
@@ -106,3 +106,29 @@ def user_login(request):
 	elif request.method == "GET":
 		return render(request,"login.html",{})
 
+class ForgetPwdView(View):
+	def get(self,request):
+		forget_form = forgetForm()
+		return render(request,"forgetpwd.html",{"forget_form":forget_form})
+
+	def post(self,request):
+		forget_form = forgetForm(request.POST)
+		if forget_form.is_valid():
+			email = request.POST.get("email","")
+			send_register_email(email,"forget")
+			return render(request,"send success.html")
+
+		else:
+			return render(request,"forgetpwd.html",{"forget_form":forget_form})
+
+
+class ResetView(View):
+	def get(self,request,active_code):
+		all_records = EmailVerifyRecord.objects.filter(code=active_code)
+		if all_records:
+			for record in all_records:
+				email = record.email
+				return render(request,"password_reset.html",{"email":email})
+		else:
+			return render(request,"404.html")#lianjie shi xiao
+		return render(request,"login.html")

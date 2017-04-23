@@ -1,0 +1,290 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+        <meta name="viewport" content="width:device-width,initial-scale=1" />
+        <meta name="keywords" content="独景，旅游，博客" />
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="shortcut icon" href="icon/Dicon.ico">
+       
+        <title>独景网-游记</title>
+
+            <!--   Le Styles  -->
+        <link rel="stylesheet" href="css/bootstrap.css"/>
+        <link rel="stylesheet" href="css/custom.css"/>
+        <link rel="stylesheet" href="css/login-register.css" />
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements  -->
+        <!--[if lt IE 9]>
+          <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        
+        <!--[if IE 7]>
+          <link href="//netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome-ie7.css" rel="stylesheet">
+        <![endif]-->
+        
+        <script type="text/javascript" src="js/jquery-2.0.0.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/login-register.js"></script>
+    </head>
+
+<body>
+                               
+    <div class="navigation">
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-offset-3 col-md-9 col-sm-12 col-xs-12">
+                        <div class="navbar-header">     
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#demo-navbar">
+                                <span class="sr-only">Togggle Navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a href="index.html" class="navbar-brand">独景网</a>
+                        </div>
+
+                        <div class="collapse navbar-collapse" id="demo-navbar">
+                            <ul class="nav navbar-nav">
+                                <li class="active"><a href="index.html">首页</a></li>
+                                <li><a href="djread.html">读景</a></li>
+                                <li><a href="djsearch.html">寻景</a></li>
+                                <li><a href="blog.html">博客</a></li>
+                                <li><a href="user.html">用户</a></li>
+                                <li><a href="##" data-toggle="modal" data-target="#about">关于</a></li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a class="btn big-login" data-toggle="modal" href="javascript:void(0)" onclick="openLoginModal();">登录</a></li>
+                                <li><a class="btn big-register" data-toggle="modal" href="javascript:void(0)" onclick="openRegisterModal();">注册</a></li>
+                            </ul>
+                        </div>
+                    </div><!-- col-sm -->
+                </div><!--  row -->
+            </div><!-- contaioner -->
+        </nav>          
+    </div>  
+
+    <!-- Modal -->
+    <div class="modal fade" id="about" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">关于我们</h4>
+          </div>
+          <div class="modal-body">
+            <P>建立属于大学生的个人旅游博客空间</P>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">关闭</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+         <!--   sign_in & sign-up  -->
+     <div class="modal fade login" id="loginModal">
+          <div class="modal-dialog login animated">
+              <div class="modal-content">
+                 <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">注册</h4>
+                 </div>
+                <div class="modal-body">  
+                    <div class="box">
+                         <div class="content">
+                            <div class="social">
+                                <a class="circle github" href="/auth/github">
+                                    <i class="fa fa-github fa-fw"></i>
+                                </a>
+                                <a id="google_login" class="circle google" href="/auth/google_oauth2">
+                                    <i class="fa fa-google-plus fa-fw"></i>
+                                </a>
+                                <a id="facebook_login" class="circle facebook" href="/auth/facebook">
+                                    <i class="fa fa-facebook fa-fw"></i>
+                                </a>
+                            </div>
+                            <div class="division">
+                                <div class="line l"></div>
+                                  <span>or</span>
+                                <div class="line r"></div>
+                            </div>
+                            <div class="error"></div>
+                            <div class="form loginBox">
+                                <form method="post" action="/login" accept-charset="UTF-8">
+                                <input id="email" class="form-control" type="text" placeholder="邮箱" name="email">
+                                <input id="password" class="form-control" type="password" placeholder="密码" name="password">
+                                <input class="btn btn-default btn-login" type="button" value="登录" onclick="loginAjax()">
+                                </form>
+                            </div>
+                         </div>
+                    </div>
+                    <div class="box">
+                        <div class="content registerBox" style="display:none;">
+                         <div class="form">
+                            <form method="post" html="{:multipart=>true}" data-remote="true" action="/register" accept-charset="UTF-8">
+                            <input id="email" class="form-control" type="text" placeholder="邮箱" name="email">
+                            <input id="password" class="form-control" type="password" placeholder="输入密码" name="password">
+                            <input id="password_confirmation" class="form-control" type="password" placeholder="确认密码" name="password_confirmation">
+                            <input class="btn btn-default btn-register" type="submit" value="创建账号" name="commit">
+                            </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="forgot login-footer">
+                        <span>还没有账号？ 
+                             <a href="javascript: showRegisterForm();">去创建</a>
+                        </span>
+                    </div>
+                    <div class="forgot register-footer" style="display:none">
+                         <span>已经有账号?</span>
+                         <a href="javascript: showLoginForm();">登录</a>
+                    </div>
+                </div>        
+              </div>
+          </div>
+     </div>
+
+     <main class="main">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="section-header">
+                        <img src="image/project-featured.png" alt="blog-picture" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="primary col-md-8 col-sm-12-xs-12">
+                     <section class="latest section">
+                         <div class="section-inner">
+                             <h2 class="heading">剑起沧澜</h2>
+                             <div class="content">    
+                                                    
+                                 <div class="item featured text-center">
+                                    <h3 class="title"><a href="blog_proflie1.html" target="_blank">云南之行</a></h3>
+                                     <p class="summary">第一次去云南怎么玩？这样选路线绝对没错！</p>
+                                     <div class="featured-image">
+                                         <a href="#website-templates/responsive-bootstrap-theme-for-products-velocity/" target="_blank">
+                                         <img class="img-responsive project-image" src="image/project-featured.png" alt="project name" />
+                                         </a>
+                                         <div class="ribbon">
+                                             <div class="text">New</div>
+                                             </div>
+                                         </div>
+                                         
+                                     <div class="desc text-left">                                    
+                                         <p>如果你也来一场说走就走的旅行，目的地会是哪？来云南吧，在这里，你会遇到云梦萦绕的山，会遇到满江春意水。淳朴善良的人儿会让你释然，你所及的一丘一壑都将书写为诗意的人生。云南那么大，第一次玩路线如何选择？告诉你这么玩一定不后悔。</p>
+                                         <p>大理和洱海是滇西北不可不去的一站。一条相当周到的2日游路线，基本上精华的景点都去到了。上万蝴蝶齐飞的蝴蝶泉，风光秀丽的洱海，洱海上的明珠南邵岛，比大理古城更原汁原味的大理古城，文创店铺林立的洋人街，千年历史的崇圣寺三塔，还有闲适的环洱海骑行时间。</p>
+                                     </div><!--//desc-->         
+                                     <a class="btn btn-cta-secondary" href="blog_proflie1.html" target="_blank"><i class="fa fa-thumbs-o-up"></i> 阅读全文</a>                 
+                                 </div><!--//item-->
+                            </div><!--//content-->  
+                        </div><!--//section-inner-->                 
+                    </section><!--//section-->
+                </div>
+                <div class="secondary col-md-4 col-sm-12-xs-12">
+                     <aside class="languages aside section">
+                        <div class="section-inner">
+                            <h2 class="heading">Languages</h2>
+                            <div class="content">
+                                <ul class="list-unstyled">
+                                    <li class="item">
+                                        <span class="title"><strong>English:</strong></span>
+                                        <span class="level">Native Speaker <br class="visible-xs"/><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </span>
+                                    </li><!--//item-->
+                                    <li class="item">
+                                        <span class="title"><strong>Spanish:</strong></span>
+                                        <span class="level">Professional Proficiency <br class="visible-sm visible-xs"/><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-half"></i></span>
+                                    </li><!--//item-->
+                                </ul>
+                            </div><!--//content-->
+                        </div><!--//section-inner-->
+                    </aside><!--//section-->
+                </div>
+            </div>
+        </div>
+     </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer>
+      <div class="container">
+        <div class="row">
+ 
+          <div class="col-xs-12 col-sm-4 col-md-4">
+               <h4>加入我们</h4>
+               <p>
+                QQ:762634089<br>
+                email:762634089@qq.com<br>
+               </p>
+          </div>
+         
+          <div class="col-xs-12 col-sm-4 col-md-4">            
+            <h4>有用链接</h4>
+              <ul class="list-inline">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                <li><a href="#"><i class="fa fa-envelope"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                <li><a href="#"><i class="fa fa-skype"></i></a></li>        
+              </ul>
+          </div>
+    
+          <div class="col-xs-12 col-sm-4 col-md-4">
+            <h4>时事通讯</h4>
+            <form class="form" role="form">
+              <div class="row">
+                <div class="col-xs-12">
+                  <div class="input-group">
+                    <label class="sr-only" for="subscribe-email">请输入你的要求...</label>
+                    <input type="email" class="form-control" id="subscribe-email" placeholder="请输入你的要求...">
+                    <span class="input-group-btn">
+                      <button type="submit" class="btn btn-success">发 送</button>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </form>
+            <br />
+            
+          </div>  
+        </div>
+      </div>
+  
+    </footer>
+
+
+
+</body>
+</html>
