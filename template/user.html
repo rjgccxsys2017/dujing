@@ -8,14 +8,13 @@
         <meta name="keywords" content="独景，旅游，博客" />
         <meta name="description" content="">
         <meta name="author" content="">
-        <link rel="shortcut icon" href="icon/Dicon.ico">
+        <link rel="shortcut icon" href="/static/icon/Dicon.ico">
        
         <title>独景网-个人主页</title>
 
             <!--   Le Styles  -->
-        <link rel="stylesheet" href="css/bootstrap.css"/>
-        <link rel="stylesheet" href="css/custom.css"/>
-        <link rel="stylesheet" href="css/login-register.css" />
+        <link rel="stylesheet" href="/static/css/bootstrap.css"/>
+        <link rel="stylesheet" href="/static/css/custom.css"/>
         <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
 
         <!-- HTML5 shim, for IE6-8 support of HTML5 elements  -->
@@ -27,9 +26,9 @@
           <link href="//netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome-ie7.css" rel="stylesheet">
         <![endif]-->
         
-        <script type="text/javascript" src="js/jquery-2.0.0.min.js"></script>
-        <script type="text/javascript" src="js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="js/login-register.js"></script>
+        <script type="text/javascript" src="/static/js/jquery-2.0.0.min.js"></script>
+        <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/static/js/modernizr.custom.js"></script>
     </head>
 
 <body>
@@ -51,10 +50,10 @@
 
                         <div class="collapse navbar-collapse" id="demo-navbar">
                             <ul class="nav navbar-nav">
-                                <li class="active"><a href="index.html">首页</a></li>
-                                <li><a href="djread.html">读景</a></li>
-                                <li><a href="djsearch.html">寻景</a></li>
-                                <li><a href="user.html">用户</a></li>
+                                <li class="active"><a href="{% url 'index' %}">首页</a></li>
+                                <li><a href="{% url 'djread' %}">读景</a></li>
+                                <li><a href="{% url 'djsearch' %}">寻景</a></li>
+                                <li><a href="{% url 'user' %}">用户</a></li>
                                 <li><a href="##" data-toggle="modal" data-target="#about">关于</a></li>
                             </ul>
                         </div>
@@ -85,7 +84,7 @@
 
     <div class="user">
         <div class="container">                       
-            <img class="profile-image img-responsive pull-left" src="image/profile.png" alt="James Lee" />
+            <img class="profile-image img-responsive pull-left" src="/static/image/profile.png" alt="James Lee" />
             <div class="profile-content pull-left">
                 <h1 class="name">剑起沧澜</h1>
                 <h2 class="desc">旅行爱好者</h2>   
@@ -96,7 +95,7 @@
                     <li><a href="#"><i class="fa fa-github-alt"></i></a></li>                                   
                 </ul> 
             </div><!--//profile-->
-            <a class="btn btn-cta-primary pull-right" href="user_message.html" target="_blank"><i class="fa fa-paper-plane"></i>修改信息</a>              
+            <a class="btn btn-cta-primary pull-right" href="{% url 'user_message' %}" target="_blank"><i class="fa fa-paper-plane"></i>修改信息</a>              
         </div><!--//container-->
     </div><!--//header-->
 
@@ -118,7 +117,7 @@
                                      <p class="summary">第一次去云南怎么玩？这样选路线绝对没错！</p>
                                      <div class="featured-image">
                                          <a href="#">
-                                         <img class="img-responsive project-image" src="image/project-featured01.png" alt="project name" />
+                                         <img class="img-responsive project-image" src="/static/image/project-featured01.png" alt="project name" />
                                          </a>
                                          <div class="ribbon">
                                              <div class="text">New</div>

@@ -10,7 +10,7 @@
         <meta name="author" content="">
         <link rel="shortcut icon" href="/static/icon/Dicon.ico">
        
-        <title>独景网-登录</title>
+        <title>独景网-注册</title>
 
             <!--   Le Styles  -->
         <link rel="stylesheet" href="/static/css/bootstrap.css"/>
@@ -26,9 +26,8 @@
           <link href="//netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome-ie7.css" rel="stylesheet">
         <![endif]-->
         <script type="text/javascript" src="/static/js/jquery-2.0.0.min.js"></script>
-		<script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="/static/js/modernizr.custom.js"></script>
-
     </head>
 
 <body>
@@ -57,7 +56,7 @@
                                 <li><a href="##" data-toggle="modal" data-target="#about">关于</a></li>
                             </ul>
                             <ul class="nav navbar-nav navbar-right">
-                                 <li><a class="btn btn-default" href="{% url 'login' %}">登录</a></li>
+                                <li><a class="btn btn-default" href="{% url 'login' %}">登录</a></li>
                                 <li><a class="btn big-default" href="{% url 'register' %}">注册</a></li>
                             </ul>
                         </div>
@@ -89,69 +88,37 @@
 
 
     <div class="sign_in">
-       <div class="container">
-         <div class="row">
-           <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-             <div class="sign-form">
-               <div class="sign-inner">
-                 <h3 class="first-child">登 录</h3>
-                 <hr>
-                 <form  action="/login/" method="post" >
-                   <div class="input-group {% if login_form.errors.username %}errorput{% endif %}">
-                     <span class="input-group-addon "><i class="fa fa-user"></i></span>
-                     <input name = "username" type="text" class="form-control" id="username" placeholder="邮 箱" data-original-title="" title="">
-                   </div>
-                   <br />
-                   <div  class="input-group {% if login_form.errors.password %}errorput{% endif %} ">
-                     <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                     <input name="password" type="password" class="form-control" id="password" placeholder="密 码" data-original-title="" title="">
-                   </div>
-                    <div class="error btns login-form-tips" id="jsLoginTips">{% for key,error in login_form.errors.items %}{{ error }}{% endfor %}{{ msg }}</div>
-                   <div class="checkbox">
-                     <label>
-                       <input type="checkbox"> 记住密码
-                     </label>
-                   </div>
-                            <input  type="submit" class="btn btn-success" value="立即登录  "/> 
-                                        
-                   <hr>
-
-                   {% csrf_token %}
-                 </form>
-                 <p>没有账号？ <a href="{% url 'register'}">创建账号</a></p>
-                 <div class="pwd-lost">
-                   <div class="pwd-lost-q show">忘记密码？ <a href="#">找回密码</a></div>
-                     <div class="pwd-lost-f hidden">
-                       <p class="text-muted">请输入一个有效的邮箱地址</p>
-                         <form class="form-inline" role="form">
-                          <div class="row">
-                                <div class="col-xs-8">
-                                  <div class="input-group">
-                                     <label class="sr-only" for="email-pwd">邮箱地址</label>
-                                     <input type="email" class="form-control" id="email-pwd" placeholder="Enter your email" style="height:40px;">
-                                       <span class="input-group-btn">
-                                       <button type="submit" class="btn btn-danger">发送</button>
-                                       </span>
-                                  </div>
-                                </div>
-                          </div>
-                        </form>
-                   </div>
-                 </div> <!-- / .pwd-lost -->
-               </div>
+     <div class="container">
+       <div class="row">
+         <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+           <div class="sign-form">
+             <div class="sign-inner">
+               <h3 class="first-child">创建账号</h3>
+               <hr>
+               <form role="form" action="#" method="post">
+                 <div class="form-group">
+                   <input type="text" class="form-control" id="username" placeholder="邮 箱" data-toggle="popover" data-placement="left" data-trigger="focus" data-content="Enter your nickname here." data-original-title="Username">
+                 </div>
+                 <div class="form-group">
+                   
+                       <input type="password" class="form-control " id="password" placeholder="密 码" data-toggle="popover" data-placement="left" data-trigger="focus" data-content="Enter a good password here." data-original-title="Password">
+                    
+                  
+                 </div>
+                 <div class="checkbox">
+                   <label>
+                     <input type="checkbox"> 我同意规定的 <a href="#">服务条件</a> 和 <a href="#">隐私权政策</a>
+                   </label>
+                 </div>
+              <a href="#" type="submit" class="btn btn-success">创建账号</a>                  
+               </form>
              </div>
            </div>
-         </div> <!-- / .row -->      
-       </div> <!-- / .container -->
-    </div><!--  /. sign_in -->
+         </div>
+       </div> <!-- / .row -->      
+     </div> <!-- / .container -->
+    </div><!-- /. sign_in -->
 
-    <script type="text/javascript">
-        $('.pwd-lost > .pwd-lost-q > a').on('click', function() {
-            $(".pwd-lost > .pwd-lost-q").toggleClass("show hidden");
-            $(".pwd-lost > .pwd-lost-f").toggleClass("hidden show animated fadeIn");
-            return false;
-        });
-    </script>
-    
+
 </body>
 </html>

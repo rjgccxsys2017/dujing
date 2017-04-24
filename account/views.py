@@ -132,3 +132,16 @@ class ResetView(View):
 		else:
 			return render(request,"404.html")#lianjie shi xiao
 		return render(request,"login.html")
+
+
+def djread(request):
+	return render(request,"djread.html")
+
+def djsearch(request):
+	return render(request,"djsearch.html")
+
+def user(request):
+	return render(request,"user.html")
+
+def user_message(request):
+	return render(request,"user_message.html")

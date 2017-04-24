@@ -20,7 +20,7 @@ from django.conf.urls import url
 from django.views.generic import TemplateView
 import xadmin
 
-from account.views import loginView,registerView,ActiveUserView,liuyan,ForgetPwdView,ResetView
+from account.views import loginView,registerView,ActiveUserView,liuyan,ForgetPwdView,ResetView,djread,djsearch,user,user_message
 
 urlpatterns = [
     url(r'^xadmin/', include(xadmin.site.urls)),
@@ -34,6 +34,10 @@ urlpatterns = [
     url(r'^liuyan/$',liuyan,name='liuyan'),
     url(r'^forget/$',ForgetPwdView.as_view(),name="forget_pwd"),
     url(r'^reset/(?P<active_code>.*)/$',ResetView.as_view(),name="reset_pwd"),
+    url(r'^djread/$',djread,name="djread"),
+    url(r'^user/$',user,name="user"),
+    url(r'^djsearch/$',djsearch,name="djsearch"),
+    url(r'^user_message/$',user_message,name="user_message"),
 
  
 

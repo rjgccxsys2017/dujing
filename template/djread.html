@@ -8,14 +8,13 @@
 		<meta name="keywords" content="独景，旅游，博客" />
 	    <meta name="description" content="">
 	    <meta name="author" content="">
-	    <link rel="shortcut icon" href="icon/Dicon.ico">
+	    <link rel="shortcut icon" href="/static/icon/Dicon.ico">
 	   
 		<title>独景网-博客游记</title>
 
 			<!--   Le Styles  -->
-		<link rel="stylesheet" href="css/bootstrap.css"/>
-		<link rel="stylesheet" href="css/custom.css"/>
-		<link rel="stylesheet" href="css/login-register.css" />
+		<link rel="stylesheet" href="/static/css/bootstrap.css"/>
+		<link rel="stylesheet" href="/static/css/custom.css"/>
 		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
 
 		<!-- HTML5 shim, for IE6-8 support of HTML5 elements  -->
@@ -27,9 +26,20 @@
 		  <link href="//netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome-ie7.css" rel="stylesheet">
 		<![endif]-->
 		
-		<script type="text/javascript" src="js/jquery-2.0.0.min.js"></script>
-		<script type="text/javascript" src="js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="js/login-register.js"></script>
+		<script type="text/javascript" src="/static/js/jquery-2.0.0.min.js"></script>
+		<script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="/static/js/modernizr.custom.js"></script>
+		<style type="text/css">
+			.copyright {
+    background: #111;
+    font-size: 13px;
+    text-align: center;
+    color: #555555;
+    padding-top: 28px;
+    padding-bottom: 28px;
+    border-top: 1px solid #303030;
+}
+		</style>
 	</head>
 
 <body>
@@ -56,20 +66,20 @@
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 							</button>
-							<a href="index.html" class="navbar-brand">独景网</a>
+							<a href="{% url 'index' %}" class="navbar-brand">独景网</a>
 						</div>
 
 						<div class="collapse navbar-collapse" id="demo-navbar">
 							<ul class="nav navbar-nav">
-								<li class="active"><a href="index.html">首页</a></li>
-								<li><a href="djread.html">读景</a></li>
-								<li><a href="djsearch.html">寻景</a></li>
-								<li><a href="user.html">用户</a></li>
+								<li class="active"><a href="{% url 'index' %}">首页</a></li>
+								<li><a href="{% url 'djread' %}">读景</a></li>
+								<li><a href="{% url 'djsearch' %}">寻景</a></li>
+								<li><a href="{% url 'user' %}">用户</a></li>
 								<li><a href="##" data-toggle="modal" data-target="#about">关于</a></li>
 							</ul>
 							<ul class="nav navbar-nav navbar-right">
-								<li><a class="btn big-login" data-toggle="modal" href="javascript:void(0)" onclick="openLoginModal();">登录</a></li>
-		                 		<li><a class="btn big-register" data-toggle="modal" href="javascript:void(0)" onclick="openRegisterModal();">注册</a></li>
+								 <li><a class="btn btn-default" href="{% url 'login' %}">登录</a></li>
+                                <li><a class="btn big-default" href="{% url 'register' %}">注册</a></li>
 							</ul>
 						</div>
 					</div><!-- col-sm -->
@@ -97,71 +107,7 @@
 	  </div>
 	</div>
 
-     <!--   sign_in & sign-up  -->
-	 <div class="modal fade login" id="loginModal">
-	      <div class="modal-dialog login animated">
-		      <div class="modal-content">
-		         <div class="modal-header">
-	                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-	                <h4 class="modal-title">注册</h4>
-	             </div>
-	            <div class="modal-body">  
-	                <div class="box">
-	                     <div class="content">
-	                        <div class="social">
-	                            <a class="circle github" href="/auth/github">
-	                                <i class="fa fa-github fa-fw"></i>
-	                            </a>
-	                            <a id="google_login" class="circle google" href="/auth/google_oauth2">
-	                                <i class="fa fa-google-plus fa-fw"></i>
-	                            </a>
-	                            <a id="facebook_login" class="circle facebook" href="/auth/facebook">
-	                                <i class="fa fa-facebook fa-fw"></i>
-	                            </a>
-	                        </div>
-	                        <div class="division">
-	                            <div class="line l"></div>
-	                              <span>or</span>
-	                            <div class="line r"></div>
-	                        </div>
-	                        <div class="error"></div>
-	                        <div class="form loginBox">
-	                            <form method="post" action="/login" accept-charset="UTF-8">
-	                            <input id="email" class="form-control" type="text" placeholder="邮箱" name="email">
-	                            <input id="password" class="form-control" type="password" placeholder="密码" name="password">
-	                            <input class="btn btn-default btn-login" type="button" value="登录" onclick="loginAjax()">
-	                            </form>
-	                        </div>
-	                     </div>
-	                </div>
-	                <div class="box">
-	                    <div class="content registerBox" style="display:none;">
-	                     <div class="form">
-	                        <form method="post" html="{:multipart=>true}" data-remote="true" action="/register" accept-charset="UTF-8">
-	                        <input id="email" class="form-control" type="text" placeholder="邮箱" name="email">
-	                        <input id="password" class="form-control" type="password" placeholder="输入密码" name="password">
-	                        <input id="password_confirmation" class="form-control" type="password" placeholder="确认密码" name="password_confirmation">
-	                        <input class="btn btn-default btn-register" type="submit" value="创建账号" name="commit">
-	                        </form>
-	                        </div>
-	                    </div>
-	                </div>
-	            </div>
-	            <div class="modal-footer">
-	                <div class="forgot login-footer">
-	                    <span>还没有账号？ 
-	                         <a href="javascript: showRegisterForm();">去创建</a>
-	                    </span>
-	                </div>
-	                <div class="forgot register-footer" style="display:none">
-	                     <span>已经有账号?</span>
-	                     <a href="javascript: showLoginForm();">登录</a>
-	                </div>
-	            </div>        
-		      </div>
-	      </div>
-	 </div>
-
+ 
     <main class="main">
         <div class="container sections-wrapper">
          	<div class="row">
@@ -169,7 +115,7 @@
 
 	         		<section class="latest section">
 	         		     <div class="section-inner">
-	         		         <h2 class="heading"><img src="image/bloger1.png" alt="bloger1" />  剑起沧澜</h2>
+	         		         <h2 class="heading"><img src="/static/image/bloger1.png" alt="bloger1" />  剑起沧澜</h2>
 	         		         <div class="content">    
 	         		                                
 	         		             <div class="item featured text-center">
@@ -177,7 +123,7 @@
 	         		                 <p class="summary">第一次去云南怎么玩？这样选路线绝对没错！</p>
 	         		                 <div class="featured-image">
 	         		                     <a href="#website-templates/responsive-bootstrap-theme-for-products-velocity/" target="_blank">
-	         		                     <img class="img-responsive project-image" src="image/project-featured01.png" alt="project name" />
+	         		                     <img class="img-responsive project-image" src="/static/image/project-featured01.png" alt="project name" />
 	         		                     </a>
 	         		                     <div class="ribbon">
 	         		                         <div class="text">New</div>
@@ -197,7 +143,7 @@
 
 	         		<section class="latest section">
 	         		     <div class="section-inner">
-	         		         <h2 class="heading"><img src="image/bloger2.jpg" alt="bloger2"/>  七色地图</h2>
+	         		         <h2 class="heading"><img src="/static/image/bloger2.jpg" alt="bloger2"/>  七色地图</h2>
 	         		         <div class="content">    
 	         		                                
 	         		             <div class="item featured text-center">
@@ -205,7 +151,7 @@
 	         		                 <p class="summary">没有到过黄山，黄山永远只是一个概念，登一次黄山，你就什么都清楚了</p>
 	         		                 <div class="featured-image">
 	         		                     <a href="#website-templates/responsive-bootstrap-theme-for-products-velocity/" target="_blank">
-	         		                     <img class="img-responsive project-image" src="image/project-featured02.jpg" alt="project name" />
+	         		                     <img class="img-responsive project-image" src="/static/image/project-featured02.jpg" alt="project name" />
 	         		                     </a>
 	         		                     <div class="ribbon">
 	         		                         <div class="text">New</div>
@@ -224,7 +170,7 @@
 
 	         		<section class="latest section">
 	         		     <div class="section-inner">
-	         		         <h2 class="heading"><img src="image/bloger3.jpg" alt="bloger3"/>  孤独川陵</h2>
+	         		         <h2 class="heading"><img src="/static/image/bloger3.jpg" alt="bloger3"/>  孤独川陵</h2>
 	         		         <div class="content">    
 	         		                                
 	         		             <div class="item featured text-center">
@@ -232,7 +178,7 @@
 	         		                 <p class="summary">红枫黄桐柳丝纤，残荷画舫西湖烟</p>
 	         		                 <div class="featured-image">
 	         		                     <a href="#website-templates/responsive-bootstrap-theme-for-products-velocity/" target="_blank">
-	         		                     <img class="img-responsive project-image" src="image/project-featured03.jpg" alt="project name" />
+	         		                     <img class="img-responsive project-image" src="/static/image/project-featured03.jpg" alt="project name" />
 	         		                     </a>
 	         		                     <div class="ribbon">
 	         		                         <div class="text">New</div>
@@ -382,5 +328,12 @@
   
     </footer>
 
+<div class="copyright wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">
+        <div class="container">
+          <span>Copyright &copy; <a style= "color:#555555" href="http://2017.jsjds.org/">2017 中国大学生计算机设计大赛比赛用&nbsp&nbsp|&nbsp&nbsp</a></span>
+                    <span><a style= "color:#555555" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=34019102000116" target="_blank"><img src="/static/image/beian.png" alt="police beian" >皖公网安备 34019102000116号</a></span></center> 
+		 
+        </div>
+      </div>
 </body>
 </html>
