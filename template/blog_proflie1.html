@@ -8,13 +8,14 @@
         <meta name="keywords" content="独景，旅游，博客" />
         <meta name="description" content="">
         <meta name="author" content="">
-        <link rel="shortcut icon" href="icon/Dicon.ico">
+        <link rel="shortcut icon" href="http://image.cangye.me//static/icon/Dicon.ico">
        
         <title>独景网-游记</title>
 
             <!--   Le Styles  -->
-        <link rel="stylesheet" href="css/bootstrap.css"/>
-        <link rel="stylesheet" href="css/custom.css"/>
+        <link rel="stylesheet" href="http://image.cangye.me//static/css/bootstrap.css"/>
+        <link rel="stylesheet" href="http://image.cangye.me//static/css/custom.css"/>
+        <link rel="stylesheet" href="http://image.cangye.me//static/css/blog.css">
         <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
 
         <!-- HTML5 shim, for IE6-8 support of HTML5 elements  -->
@@ -26,9 +27,19 @@
           <link href="//netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome-ie7.css" rel="stylesheet">
         <![endif]-->
         
-        <script type="text/javascript" src="js/jquery-2.0.0.min.js"></script>
-        <script type="text/javascript" src="js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="js/modernizr.custom.js"></script>
+        <script type="text/javascript" src="http://image.cangye.me//static/js/jquery-2.0.0.min.js"></script>
+        <script type="text/javascript" src="http://image.cangye.me//static/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="http://image.cangye.me//static/js/modernizr.custom.js"></script>
+<style type="text/css">
+        .copyright {
+    background: #111;
+    font-size: 13px;
+    text-align: center;
+    color: #555555;
+    padding-top: 28px;
+    padding-bottom: 28px;
+    border-top: 1px solid #303030;
+}</style>
     </head>
 
 <body>
@@ -45,21 +56,21 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a href="index.html" class="navbar-brand">独景网</a>
+                            <a href="{% url 'index' %}" class="navbar-brand">独景网</a>
                         </div>
 
                         <div class="collapse navbar-collapse" id="demo-navbar">
                             <ul class="nav navbar-nav">
                                 <li class="active"><a href="index.html">首页</a></li>
-                                <li><a href="djread.html">读景</a></li>
-                                <li><a href="djsearch.html">寻景</a></li>
-                                <li><a href="blog.html">博客</a></li>
-                                <li><a href="user.html">用户</a></li>
+                                <li><a href="{% url 'djread' %}">读景</a></li>
+                                <li><a href="{% url 'djsearch' %}">寻景</a></li>
+                                <li><a href="#">博客</a></li>
+                                <li><a href="{% url 'user' %}">用户</a></li>
                                 <li><a href="##" data-toggle="modal" data-target="#about">关于</a></li>
                             </ul>
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a class="btn btn-default" href="sign_in.html">登录</a></li>
-                                <li><a class="btn big-default" href="sign_up.html">注册</a></li>
+                                <li><a class="btn" href="{% url 'login' %}">登录</a></li>
+                                <li><a class="btn" href="{% url 'register' %}">注册</a></li>
                             </ul>
                         </div>
                     </div><!-- col-sm -->
@@ -93,54 +104,115 @@
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="section-header">
-                        <img src="image/project-featured.png" alt="blog-picture" />
+                        <img src="http://image.cangye.me//static/image/project-featured01.jpg" alt="blog-picture" />
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="primary col-md-8 col-sm-12-xs-12">
-                     <section class="latest section">
-                         <div class="section-inner">
-                             <h2 class="heading">剑起沧澜</h2>
-                             <div class="content">    
-                                                    
-                                 <div class="item featured text-center">
-                                    <h3 class="title"><a href="blog_proflie1.html" target="_blank">云南之行</a></h3>
-                                     <p class="summary">第一次去云南怎么玩？这样选路线绝对没错！</p>
-                                     <div class="featured-image">
-                                         <a href="#website-templates/responsive-bootstrap-theme-for-products-velocity/" target="_blank">
-                                         <img class="img-responsive project-image" src="image/project-featured.png" alt="project name" />
-                                         </a>
-                                         <div class="ribbon">
-                                             <div class="text">New</div>
-                                             </div>
-                                         </div>
-                                         
-                                     <div class="desc text-left">                                    
-                                         <p>如果你也来一场说走就走的旅行，目的地会是哪？来云南吧，在这里，你会遇到云梦萦绕的山，会遇到满江春意水。淳朴善良的人儿会让你释然，你所及的一丘一壑都将书写为诗意的人生。云南那么大，第一次玩路线如何选择？告诉你这么玩一定不后悔。</p>
-                                         <p>大理和洱海是滇西北不可不去的一站。一条相当周到的2日游路线，基本上精华的景点都去到了。上万蝴蝶齐飞的蝴蝶泉，风光秀丽的洱海，洱海上的明珠南邵岛，比大理古城更原汁原味的大理古城，文创店铺林立的洋人街，千年历史的崇圣寺三塔，还有闲适的环洱海骑行时间。</p>
-                                     </div><!--//desc-->         
-                                     <a class="btn btn-cta-secondary" href="blog_proflie1.html" target="_blank"><i class="fa fa-thumbs-o-up"></i> 阅读全文</a>                 
-                                 </div><!--//item-->
-                            </div><!--//content-->  
-                        </div><!--//section-inner-->                 
-                    </section><!--//section-->
-                </div>
+                  <!-- ================  aritcle ================-->
+    <div class="local-con clearfix">
+        <div class="sideL">
+          <div class="_j_content">
+                      <div class="f-block" id="_j_paragraph_1"><h2>一、云南不是一次就玩得转的，第一次要有所取舍</h2>
+                      </div>
+                      <div class="f-block">
+                        <div class="p-section">
+                          云南可以说是目前国内旅游资源最丰富的地方。或许你很想去一次云南，但是却不知道怎么安排行程？小伙伴，别担心，你这个问题很普遍。原因很有以下几点：<br>
+      1、云南很大。你看韩国每天那么跳，他其实只有云南的1/4大。<br>
+      2、云南好玩的地方太多。丽江、大理、昆明、西双版纳、泸沽湖、香格里拉、洱海、滇池、三大雪山、腾冲哪一个不是大名鼎鼎，哪一个不是美的冒泡？<br>
+
+                        </div><!-- /. p-section -->
+                    </div>
+                      <div class="f-block">
+                        <img class="_j_lazyload" src="http://image.cangye.me//static/image/blog1/yunnan1.png" data-src="" data-rt-src="">
+                      </div>
+
+                      <div class="f-block" id="_j_paragraph_2">
+                        <h2>二、几条丽江出发的经典1-2日路线介绍</h2>
+                      </div>
+                      <div class="f-block">
+                      <h3>1、大理+洱海2日游</h3>
+                      </div>
+                    
+                      <div class="f-block">
+                        <div class="p-section">
+                            蝴蝶泉—洱海游船—白族三道茶—南诏风情岛—白族土八碗—三星级酒店—大理古城—洋人街—崇圣寺三塔—环洱海骑行<br>
+                        </div>
+                      </div>
+
+                      <div class="f-block">
+                        <img class="_j_lazyload" src="http://image.cangye.me//static/image/blog1/yunnan2.png" data-src="" data-rt-src="">
+                      </div>
+
+                      <div class="f-block">
+                        <div class="p-section">
+        大理和洱海是滇西北不可不去的一站。一条相当周到的2日游路线，基本上精华的景点都去到了。上万蝴蝶齐飞的蝴蝶泉，风光秀丽的洱海，洱海上的明珠南邵岛，比大理古城更原汁原味的大理古城，文创店铺林立的洋人街，千年历史的崇圣寺三塔，还有闲适的环洱海骑行时间。
+                        </div>
+                      </div>
+                      
+                      
+                     <div class="f-block">
+                        <img class="_j_lazyload" src="http://image.cangye.me//static/image/blog1/yunnan3.png" data-src="" data-rt-src="">       
+                    </div>
+
+                    <div class="f-block">
+                      <h3>2、香格里拉2日游</h3>
+                      </div>
+                      
+                    <div class="f-block">
+                       <div class="p-section">
+                           香格里拉两日游有三种不同的路线可能，各有千秋。<br>
+                      A、长江第一湾+虎跳峡+中小甸牧场+独克宗古城+藏王宴+普达措+属都湖+碧塔海+香巴拉时轮坛城<br>
+                        </div>
+                    </div>
+                    <div class="f-block">
+                      <img class="_j_lazyload" src="http://image.cangye.me//static/image/blog1/yunnan4.png" data-src="" data-rt-src="">
+                    </div>
+                    <div class="f-block">
+                      <div class="p-section">
+                      B、长江第一湾+虎跳峡+月亮湾+梅里雪山日落+藏王宴+梅里雪山日出+飞来寺+独克宗古城+香巴拉时轮坛城<br>
+                       </div>
+                    </div>
+                    <div class="f-block">
+                      <img class="_j_lazyload" src="http://image.cangye.me//static/image/blog1/yunnan5.png" data-src="" data-rt-src="">
+                    </div>
+                    <div class="f-block">
+                      <div class="p-section">
+                      C、长江第一湾+傣族村寨+独克宗古城+石卡雪山+蓝月山谷+藏王宴+香巴拉时轮坛城+虎跳峡<br>
+                      三条路线都去了大名鼎鼎的“三江并流”长江第一湾、“人间天堂”香格里拉、“惊涛骇浪”虎跳峡、2014年失火的藏族古城独克宗、密宗佛教圣地香巴拉时轮坛城，都吃藏王宴，都住商务酒店一晚。下面说说不同之处。
+                       </div>
+                    </div>
+
+                    <div class="f-block">
+                      <img class="_j_lazyload" src="http://image.cangye.me//static/image/blog1/yunnan6.png" data-src="" data-rt-src="">
+                    </div>
+                    <div class="f-block">
+                      <div class="p-section">
+                      最后，别忘了在你的行程里添加泸沽湖的自由行。这样一份5-7天的行程就出炉了！找一个小长假出发吧！
+                       </div>
+                    </div>
+                    <div class="f-block">
+                      <img class="_j_lazyload" src="http://image.cangye.me//static/image/blog1/yunnan7.png" data-src="" data-rt-src="">
+                    </div>
+
+
+          </div><!--  /. _j_content -->
+        </div><!-- /. sideL -->
+    </div><!-- /. local-con clearifx -->
+                    <!-- ========================  aritcle  end ==========-->
+                </div><!-- /. primary -->
                 <div class="secondary col-md-4 col-sm-12-xs-12">
-                     <aside class="languages aside section">
+                     <aside class="aside section">
                         <div class="section-inner">
-                            <h2 class="heading">Languages</h2>
+                            <h2 class="heading">作者</h2>
                             <div class="content">
-                                <ul class="list-unstyled">
-                                    <li class="item">
-                                        <span class="title"><strong>English:</strong></span>
-                                        <span class="level">Native Speaker <br class="visible-xs"/><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </span>
-                                    </li><!--//item-->
-                                    <li class="item">
-                                        <span class="title"><strong>Spanish:</strong></span>
-                                        <span class="level">Professional Proficiency <br class="visible-sm visible-xs"/><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-half"></i></span>
-                                    </li><!--//item-->
-                                </ul>
+                              <div class="item">
+                                 <h3><img src="http://image.cangye.me//static/image/bloger1.jpg" alt="bloger1" />  剑起沧澜</h3>
+                              </div>
+                              <div class="item">
+                                  <p>励志把生活过成艺术的旅行爱好者，酷爱人文，热爱分享。</p>
+                              </div>
                             </div><!--//content-->
                         </div><!--//section-inner-->
                     </aside><!--//section-->
@@ -148,25 +220,6 @@
             </div>
         </div>
      </main>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -217,7 +270,13 @@
       </div>
   
     </footer>
-
+<div class="copyright wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">
+        <div class="container">
+          <span>Copyright &copy; <a style= "color:#555555" href="http://2017.jsjds.org/">2017 中国大学生计算机设计大赛比赛用&nbsp&nbsp|&nbsp&nbsp</a></span>
+                    <span><a style= "color:#555555" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=34019102000116" target="_blank"><img src="http://image.cangye.me//static/image/beian.png" alt="police beian" >皖公网安备 34019102000116号</a></span></center> 
+     
+        </div>
+      </div>
 
 
 </body>

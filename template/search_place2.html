@@ -8,13 +8,13 @@
         <meta name="keywords" content="独景，旅游，博客" />
         <meta name="description" content="">
         <meta name="author" content="">
-        <link rel="shortcut icon" href="icon/Dicon.ico">
+        <link rel="shortcut icon" href="http://image.cangye.me//static/icon/Dicon.ico">
        
         <title>独景网-游记</title>
 
             <!--   Le Styles  -->
-        <link rel="stylesheet" href="css/bootstrap.css"/>
-        <link rel="stylesheet" href="css/custom.css"/>
+        <link rel="stylesheet" href="http://image.cangye.me//static/css/bootstrap.css"/>
+        <link rel="stylesheet" href="http://image.cangye.me//static/css/custom.css"/>
         <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
 
         <!-- HTML5 shim, for IE6-8 support of HTML5 elements  -->
@@ -26,9 +26,19 @@
           <link href="//netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome-ie7.css" rel="stylesheet">
         <![endif]-->
         
-        <script type="text/javascript" src="js/jquery-2.0.0.min.js"></script>
-        <script type="text/javascript" src="js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="js/modernizr.custom.js"></script>
+        <script type="text/javascript" src="http://image.cangye.me//static/js/jquery-2.0.0.min.js"></script>
+        <script type="text/javascript" src="http://image.cangye.me//static/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="http://image.cangye.me//static/js/modernizr.custom.js"></script>
+        <style type="text/css">
+        .copyright {
+    background: #111;
+    font-size: 13px;
+    text-align: center;
+    color: #555555;
+    padding-top: 28px;
+    padding-bottom: 28px;
+    border-top: 1px solid #303030;
+}</style>
     </head>
 
 <body>
@@ -45,21 +55,21 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a href="index.html" class="navbar-brand">独景网</a>
+                            <a href="{% url 'index' %}" class="navbar-brand">独景网</a>
                         </div>
 
                         <div class="collapse navbar-collapse" id="demo-navbar">
                             <ul class="nav navbar-nav">
-                                <li class="active"><a href="index.html">首页</a></li>
-                                <li><a href="djread.html">读景</a></li>
-                                <li><a href="djsearch.html">寻景</a></li>
-                                <li><a href="blog.html">博客</a></li>
-                                <li><a href="user.html">用户</a></li>
+                                <li class="active"><a href="{% url 'index' %}">首页</a></li>
+                                <li><a href="{% url 'djread' %}">读景</a></li>
+                                <li><a href="{% url 'djsearch' %}">寻景</a></li>
+                                <li><a href="#">博客</a></li>
+                                <li><a href="{% url 'user' %}">用户</a></li>
                                 <li><a href="##" data-toggle="modal" data-target="#about">关于</a></li>
                             </ul>
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a class="btn btn-default" href="sign_in.html">登录</a></li>
-                                <li><a class="btn big-default" href="sign_up.html">注册</a></li>
+                                <li><a class="btn" href="{% url 'login' %}">登录</a></li>
+                                <li><a class="btn" href="{% url 'register' %}">注册</a></li>
                             </ul>
                         </div>
                     </div><!-- col-sm -->
@@ -92,36 +102,110 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="section-header">
-                        <img src="image/project-featured.png" alt="blog-picture" />
-                    </div>
+                         <!-- Topic Header -->
+                  <div class="topic">
+                    <ol class="breadcrumb hidden-xs">
+                      <li><a href="{% url 'index' %}">首 页</a></li>
+                      <li><a href="{% url 'djsearch' %}">寻景</a></li>
+                      <li class="active">云南大理</li>
+                    </ol>  
+                  </div> 
                 </div>
             </div>
             <div class="row">
                 <div class="primary col-md-8 col-sm-12-xs-12">
                      <section class="latest section">
                          <div class="section-inner">
-                             <h2 class="heading">剑起沧澜</h2>
+                             <h2 class="heading">云南大理</h2>
                              <div class="content">    
                                                     
-                                 <div class="item featured text-center">
-                                    <h3 class="title"><a href="blog_proflie1.html" target="_blank">云南之行</a></h3>
-                                     <p class="summary">第一次去云南怎么玩？这样选路线绝对没错！</p>
+                                 <div class="item featured text-left">
+                                    
                                      <div class="featured-image">
-                                         <a href="#website-templates/responsive-bootstrap-theme-for-products-velocity/" target="_blank">
-                                         <img class="img-responsive project-image" src="image/project-featured.png" alt="project name" />
+                                         <a href="#" target="_blank">
+                                         <img class="img-responsive project-image" src="http://image.cangye.me//static/image/search2/search2.1.jpg" alt="project name" />
                                          </a>
-                                         <div class="ribbon">
-                                             <div class="text">New</div>
-                                             </div>
-                                         </div>
+                                      </div>
                                          
                                      <div class="desc text-left">                                    
-                                         <p>如果你也来一场说走就走的旅行，目的地会是哪？来云南吧，在这里，你会遇到云梦萦绕的山，会遇到满江春意水。淳朴善良的人儿会让你释然，你所及的一丘一壑都将书写为诗意的人生。云南那么大，第一次玩路线如何选择？告诉你这么玩一定不后悔。</p>
-                                         <p>大理和洱海是滇西北不可不去的一站。一条相当周到的2日游路线，基本上精华的景点都去到了。上万蝴蝶齐飞的蝴蝶泉，风光秀丽的洱海，洱海上的明珠南邵岛，比大理古城更原汁原味的大理古城，文创店铺林立的洋人街，千年历史的崇圣寺三塔，还有闲适的环洱海骑行时间。</p>
+                                         <p>大理白族自治州地处云南省中部偏西，海拔2090米，东巡洱海，西及点苍山脉，辖大理市和祥云、弥渡、宾川、永平、云龙、洱源、鹤庆、剑川8个县以及漾濞、巍山、南涧3个少数民族自治县，是中国西南边疆开发较早的地区之一。</p><br>
+                                         <p>地处低纬高原，四季温差不大，干湿季分明，以低纬高原季风气候为主，境内以蝴蝶泉、苍山、洱海、大理古城、崇圣寺三塔等景点最有代表性。</p>
                                      </div><!--//desc-->         
-                                     <a class="btn btn-cta-secondary" href="blog_proflie1.html" target="_blank"><i class="fa fa-thumbs-o-up"></i> 阅读全文</a>                 
                                  </div><!--//item-->
+
+                                <div class="item featured text-left">
+                                    <div class="desc text-left">
+                                      <div class="media">
+                                        <img class="media-object pull-right" src="http://image.cangye.me//static/image/search2/media2.1.jpg" alt="...">
+                                        <div class="media-body">
+                                           <p>大理历史悠久，是云南最早文化发祥地之一。据文献记载，4世纪白族祖先就在这里繁衍生息，散布了许多氏族部落，史书中称为“昆明之属”，他们创造了灿烂的新石器文化。</p>
+                                        </div>
+                                      </div> <!-- /. media -->
+                                    </div>
+
+                                    <div class="featured-image">
+                                        <img class="img-responsive project-image" src="http://image.cangye.me//static/image/search2/search2.2.jpg" alt="project name" />
+                                     </div>
+                                 </div>
+
+                                 <div class="item featured text-left">
+                                    <h2>著名景区</h2>
+                                    <div class="desc text-left">
+                                     <div class="media">
+                                        <img class="media-object pull-right" src="http://image.cangye.me//static/image/search2/media2.2.jpg" alt="...">
+                                        <div class="media-body">
+                                            <h4>大理古城</h4>
+                                      <p>大理古城在唐、宋500多年的历史间是云南的政治、经济、文化的中心。古城内文物古迹众多，城池格局基本保存，重要遗址可辩，截至2013年，古城内分布了14处市级以上的重点文物保护单位。</p>
+                                        </div>
+                                      </div> <!-- /. media -->
+                                     
+                                      <div class="media">
+                                        <img class="media-object pull-right" src="http://image.cangye.me//static/image/search2/media2.3.jpg" alt="...">
+                                        <div class="media-body">
+                                            <h4>洱海</h4>
+                                      <p>洱海，古称昆明池、洱河、叶榆泽等。因其状似人耳，故名洱海。洱海水深清澈，宛若无瑕的美玉，秀丽无比，洱海是中国著名的高原湖泊，早在汉代它已名载史册。</p>
+                                        </div>
+                                      </div> <!-- /. media -->
+                                     
+                                    </div>
+                                </div> 
+
+
+                                <div class="item featured text-left">
+                                    <div class="desc text-left">
+                                      <div class="media">
+                                        <img class="media-object pull-right" src="http://image.cangye.me//static/image/search2/media2.4.jpg" alt="...">
+                                        <div class="media-body">
+                                           <h4>蝴蝶泉</h4>
+                                            <p>蝴蝶泉，是有名的游览胜地之一，风光秀丽，泉水清澈，独具天下罕见的奇观（蝴蝶会）。</p>
+                                            <p>蝴蝶泉，泉水清澈如镜。每年到蝴蝶会时，成千上万的蝴蝶从四面八方飞来，在泉边漫天飞舞。蝶大如巴掌，小如铜钱。无数蝴蝶还钩足连须，首尾相衔，一串串地从大合欢树上垂挂至水面。五彩斑斓，蔚为奇观。</p>
+                                            <p>从牌坊到蝴蝶泉边，约有百米，泉池二三丈见方，四周用透亮的大理石砌成扩栏。泉水清澈见底，一串串银色水泡，自沙石中徐徐涌出，汩汩冒出水面，泛起片片水花。这泉水得苍山化雪之功，不仅水量稳定，水质也十分优良。</p>
+                                        </div>
+                                      </div> <!-- /. media -->
+
+                                      <div class="media">
+                                        <img class="media-object pull-right" src="http://image.cangye.me//static/image/search2/media2.5.jpg" alt="...">
+                                        <div class="media-body">
+                                           <h4>崇圣寺三塔</h4>
+                                            <p>三塔由一大二小三阁组成。大塔又名千寻塔，当地群众称它为“文笔塔”。崇圣寺三塔在1961年3月就被国务院公布为第一批全国重点文物保护单位。崇圣寺三塔还在80年代衍生出一个三塔倒影公园。公园占地27亩，有水面积达10多亩。公园坐北向南，背靠一公里许的崇圣寺三塔，以园内的潭水能非常清晰地倒映出三塔姿态而得名。</p>
+                                        </div>
+                                      </div> <!-- /. media -->
+                                    </div>
+                                </div> 
+
+                                <div class="item featured text-left">
+                                   <div class="desc text-left">
+                                     <h4>苍山</h4>
+                                     <p>苍山又名点苍山。苍山，是云岭山脉南端的主峰，由十九座山峰由北而南组成，北起洱源邓川，南至下关天生桥。苍山十九峰，巍峨雄壮，与秀丽的洱海风光形成强烈对照。苍山东坡两峰夹一溪，形成了十九峰夹十八溪的梳状地貌。</p>
+                                   </div>
+                                   <div class="featured-image">
+                                        <img class="img-responsive project-image" src="http://image.cangye.me//static/image/search2/search2.3.jpg" alt="project name" />
+                                     </div>
+                                </div>
+
+
+
+
                             </div><!--//content-->  
                         </div><!--//section-inner-->                 
                     </section><!--//section-->
@@ -129,16 +213,29 @@
                 <div class="secondary col-md-4 col-sm-12-xs-12">
                      <aside class="languages aside section">
                         <div class="section-inner">
-                            <h2 class="heading">Languages</h2>
+                            <h2 class="heading">景区简介</h2>
+                            <div class="content">
+                               <div class="intro">
+                                 <h4>大理，一生不能不到的地方。</h4>
+<P>来此之前，你要把自己清空，放下杂念，可以闻到大理的春天。<br> 
+只要你进入大理的地界，那东边洱海温柔的天光，西边苍山氤氲的云影，就是一部浪漫影片的布景。</P>
+                               </div>
+                            </div><!--//content-->
+                        </div><!--//section-inner-->
+                    </aside><!--//section-->
+
+                    <aside class="aside section">
+                        <div class="section-inner">
+                            <h2 class="heading">星级指数</h2>
                             <div class="content">
                                 <ul class="list-unstyled">
                                     <li class="item">
-                                        <span class="title"><strong>English:</strong></span>
-                                        <span class="level">Native Speaker <br class="visible-xs"/><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </span>
+                                        <span class="title"><strong>景区星级:</strong></span>
+                                        <span class="level"><i class="fa fa-star"></i> <i class="fa fa-star"></i>  <i class="fa fa-star"></i> <i class="fa fa-star"></i> </span>
                                     </li><!--//item-->
                                     <li class="item">
-                                        <span class="title"><strong>Spanish:</strong></span>
-                                        <span class="level">Professional Proficiency <br class="visible-sm visible-xs"/><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-half"></i></span>
+                                        <span class="title"><strong>服务星级:</strong></span>
+                                        <span class="level"><br class="visible-sm visible-xs"/><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </span>
                                     </li><!--//item-->
                                 </ul>
                             </div><!--//content-->
@@ -217,7 +314,13 @@
       </div>
   
     </footer>
-
+<div class="copyright wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">
+        <div class="container">
+          <span>Copyright &copy; <a style= "color:#555555" href="http://2017.jsjds.org/">2017 中国大学生计算机设计大赛比赛用&nbsp&nbsp|&nbsp&nbsp</a></span>
+                    <span><a style= "color:#555555" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=34019102000116" target="_blank"><img src="http://image.cangye.me//static/image/beian.png" alt="police beian" >皖公网安备 34019102000116号</a></span></center> 
+     
+        </div>
+      </div>
 
 
 </body>

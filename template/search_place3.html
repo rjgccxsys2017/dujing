@@ -8,13 +8,13 @@
         <meta name="keywords" content="独景，旅游，博客" />
         <meta name="description" content="">
         <meta name="author" content="">
-        <link rel="shortcut icon" href="icon/Dicon.ico">
+        <link rel="shortcut icon" href="http://image.cangye.me//static/icon/Dicon.ico">
        
         <title>独景网-游记</title>
 
             <!--   Le Styles  -->
-        <link rel="stylesheet" href="css/bootstrap.css"/>
-        <link rel="stylesheet" href="css/custom.css"/>
+        <link rel="stylesheet" href="http://image.cangye.me//static/css/bootstrap.css"/>
+        <link rel="stylesheet" href="http://image.cangye.me//static/css/custom.css"/>
         <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
 
         <!-- HTML5 shim, for IE6-8 support of HTML5 elements  -->
@@ -26,9 +26,20 @@
           <link href="//netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome-ie7.css" rel="stylesheet">
         <![endif]-->
         
-        <script type="text/javascript" src="js/jquery-2.0.0.min.js"></script>
-        <script type="text/javascript" src="js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="js/modernizr.custom.js"></script>
+        <script type="text/javascript" src="http://image.cangye.me//static/js/jquery-2.0.0.min.js"></script>
+        <script type="text/javascript" src="http://image.cangye.me//static/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="http://image.cangye.me//static/js/modernizr.custom.js"></script>
+
+        <style type="text/css">
+        .copyright {
+    background: #111;
+    font-size: 13px;
+    text-align: center;
+    color: #555555;
+    padding-top: 28px;
+    padding-bottom: 28px;
+    border-top: 1px solid #303030;
+}</style>
     </head>
 
 <body>
@@ -45,21 +56,21 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a href="index.html" class="navbar-brand">独景网</a>
+                            <a href="{% url 'index' %}" class="navbar-brand">独景网</a>
                         </div>
 
                         <div class="collapse navbar-collapse" id="demo-navbar">
                             <ul class="nav navbar-nav">
-                                <li class="active"><a href="index.html">首页</a></li>
-                                <li><a href="djread.html">读景</a></li>
-                                <li><a href="djsearch.html">寻景</a></li>
-                                <li><a href="blog.html">博客</a></li>
-                                <li><a href="user.html">用户</a></li>
+                                <li class="active"><a href="{% url 'index' %}">首页</a></li>
+                                <li><a href="{% url 'djread' %}">读景</a></li>
+                                <li><a href="{% url 'djsearch' %}">寻景</a></li>
+                                <li><a href="#">博客</a></li>
+                                <li><a href="{% url 'user' %}">用户</a></li>
                                 <li><a href="##" data-toggle="modal" data-target="#about">关于</a></li>
                             </ul>
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a class="btn btn-default" href="sign_in.html">登录</a></li>
-                                <li><a class="btn big-default" href="sign_up.html">注册</a></li>
+                                <li><a class="btn" href="{% url 'login' %}">登录</a></li>
+                                <li><a class="btn" href="{% url 'register' %}">注册</a></li>
                             </ul>
                         </div>
                     </div><!-- col-sm -->
@@ -92,36 +103,80 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="section-header">
-                        <img src="image/project-featured.png" alt="blog-picture" />
-                    </div>
+                         <!-- Topic Header -->
+                  <div class="topic">
+                    <ol class="breadcrumb hidden-xs">
+                      <li><a href="{% url 'index' %}">首 页</a></li>
+                      <li><a href="{% url 'djsearch' %}">寻景</a></li>
+                      <li class="active">杭州西湖</li>
+                    </ol>  
+                  </div> 
                 </div>
             </div>
             <div class="row">
                 <div class="primary col-md-8 col-sm-12-xs-12">
                      <section class="latest section">
                          <div class="section-inner">
-                             <h2 class="heading">剑起沧澜</h2>
+                             <h2 class="heading">杭州西湖</h2>
                              <div class="content">    
                                                     
                                  <div class="item featured text-center">
-                                    <h3 class="title"><a href="blog_proflie1.html" target="_blank">云南之行</a></h3>
-                                     <p class="summary">第一次去云南怎么玩？这样选路线绝对没错！</p>
                                      <div class="featured-image">
-                                         <a href="#website-templates/responsive-bootstrap-theme-for-products-velocity/" target="_blank">
-                                         <img class="img-responsive project-image" src="image/project-featured.png" alt="project name" />
+                                         <a href="#" target="_blank">
+                                         <img class="img-responsive project-image" src="http://image.cangye.me//static/image/search3/search3.1.jpg" alt="project name" />
                                          </a>
-                                         <div class="ribbon">
-                                             <div class="text">New</div>
-                                             </div>
-                                         </div>
+                                      </div>
                                          
                                      <div class="desc text-left">                                    
-                                         <p>如果你也来一场说走就走的旅行，目的地会是哪？来云南吧，在这里，你会遇到云梦萦绕的山，会遇到满江春意水。淳朴善良的人儿会让你释然，你所及的一丘一壑都将书写为诗意的人生。云南那么大，第一次玩路线如何选择？告诉你这么玩一定不后悔。</p>
-                                         <p>大理和洱海是滇西北不可不去的一站。一条相当周到的2日游路线，基本上精华的景点都去到了。上万蝴蝶齐飞的蝴蝶泉，风光秀丽的洱海，洱海上的明珠南邵岛，比大理古城更原汁原味的大理古城，文创店铺林立的洋人街，千年历史的崇圣寺三塔，还有闲适的环洱海骑行时间。</p>
-                                     </div><!--//desc-->         
-                                     <a class="btn btn-cta-secondary" href="blog_proflie1.html" target="_blank"><i class="fa fa-thumbs-o-up"></i> 阅读全文</a>                 
+                                         <p>西湖，位于浙江省杭州市西面，是中国大陆首批国家重点风景名胜区和中国十大风景名胜之一。它是中国大陆主要的观赏性淡水湖泊之一，也是现今《世界遗产名录》中少数几个和中国唯一一个湖泊类文化遗产。</p>
+                                         <p>西湖三面环山。湖中被孤山、白堤、苏堤、杨公堤分隔，按面积大小分别为外西湖、西里湖、北里湖、小南湖及岳湖等五片水面，苏堤、白堤越过湖面，小瀛洲、湖心亭、阮公墩三个小岛鼎立于外西湖湖心，夕照山的雷峰塔与宝石山的保俶塔隔湖相映，由此形成了“一山、二塔、三岛、三堤、五湖”的基本格局。</p>
+                                     </div><!--//desc--> 
+                                     <div class="featured-image">
+                                         <a href="#" target="_blank">
+                                         <img class="img-responsive project-image" src="http://image.cangye.me//static/image/search3/search3.2.jpg" alt="project name" />
+                                         </a>
+                                      </div>
                                  </div><!--//item-->
+
+                                 <div class="item featured text-left">
+                                    <div class="desc text-left">
+                                    <h2>人文西湖</h2>
+                                      <h4>宗教艺术</h4>
+                                      <p>西湖与佛教、道教等都有着密切的联系。在长远的历史中，各种宗教团体和道观佛寺聚集在西湖及周边群山之中，增添了西湖浓厚的宗教色彩。这其中尤以吴越国时期为鼎盛。当时各代国王热心佛学，在西湖周围兴建许多寺庙、宝塔、经幢和石窟。</p>
+                                      <p>如今，保俶塔和重建后的雷峰塔仍是西湖风光的代表性景点，而拥有中国室内最大木雕坐式佛像的灵隐寺更是西湖各收费景点中最受欢迎的观光点之一。</p>
+                                      <div class="media">
+                                        <img class="media-object pull-right" src="http://image.cangye.me//static/image/search3/media3.1.jpg" alt="...">
+                                        <div class="media-body">
+                                           <h4>文学作品</h4>
+                                      <p>西湖以其湖光山色和深厚人文底蕴，吸引了历代文人墨客的眷顾，因此在文学方面也留下了诸多名篇和典籍。《武林掌故丛编》、《西湖梦寻》、《西湖集览》与新旧《西湖志》、《湖山便览》等记载了大量关于西湖和古代杭州的史迹掌故。另外，近现代众多作家也与西湖结缘。在诗词方面，白居易、苏轼、柳永、杨万里、林逋、徐志摩、胡适等诗人留下了无数佳句；在散文方面，张岱、鲁迅、俞平伯、郁达夫、宗璞等名家则写下了众多名篇。以下例举部分与西湖紧密关联的文学作品。</p>
+                                        </div>
+                                      </div> <!-- /. media -->
+                                      
+                                       <div class="media">
+                                        <img class="media-object pull-right" src="http://image.cangye.me//static/image/search3/media3.2.jpg" alt="...">
+                                        <div class="media-body">
+                                            <h4>美术</h4>
+                                      <p>两宋时期，皇家画院的发展达到空前繁荣的程度。而作为南宋首都之杭州，也集中了一批优秀的山水画家。这些画家对于近在眼前的西湖也留下了众多名作。近代以来的中国美术史上，西湖也占有比较重要的地位。中国大陆唯一一个美术学国家重点学科所在地，联合国教科文组织唯一承认学历的中国大陆美术院校——中国美术学院就诞生于西湖湖畔</p>
+                                        </div>
+                                      </div> <!-- /. media -->
+                                    </div>
+                                 </div> 
+
+
+                                 <div class="item featured text-left">
+                                    <div class="desc text-left">
+                                    <h4>民间传说</h4>
+                                      <p>西湖自古以来便流传着许多民间传说和神话故事。其中最为著名的就是《白蛇传》、《梁山伯与祝英台》和《苏小小》。白蛇传中的“断桥相会”、“白娘子被压雷峰塔”等情节与西湖十景有着密切的联系。而传说中梁祝的爱情故事发生在西湖边的万松书院。另外，杭州还流传岳飞、济公、乾隆下江南、杨乃武与“小白菜”等大量民间故事和《初阳台》、《双投桥》、《东坡肉》、《葱包桧儿》、《十八棵御茶》等传说。</p> 
+                                      <div class="featured-image">
+                                         <a href="#" target="_blank">
+                                         <img class="img-responsive project-image" src="http://image.cangye.me//static/image/search3/search3.3.jpg" alt="project name" />
+                                         </a>
+                                      </div>
+                                    </div>
+                                  </div>
+
+
+
                             </div><!--//content-->  
                         </div><!--//section-inner-->                 
                     </section><!--//section-->
@@ -129,16 +184,27 @@
                 <div class="secondary col-md-4 col-sm-12-xs-12">
                      <aside class="languages aside section">
                         <div class="section-inner">
-                            <h2 class="heading">Languages</h2>
+                            <h2 class="heading">景区简介</h2>
+                            <div class="content">
+                               <div class="intro">
+                                 <P>来杭州，若不曾去西子湖畔走一走，那将是你此生最大的遗憾;<br>去西湖，若未翻开它的诗书读一读，那将是你一生最美的错过。<br></P>
+                               </div>
+                            </div><!--//content-->
+                        </div><!--//section-inner-->
+                    </aside><!--//section-->
+
+                    <aside class="aside section">
+                        <div class="section-inner">
+                            <h2 class="heading">星级指数</h2>
                             <div class="content">
                                 <ul class="list-unstyled">
                                     <li class="item">
-                                        <span class="title"><strong>English:</strong></span>
-                                        <span class="level">Native Speaker <br class="visible-xs"/><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </span>
+                                        <span class="title"><strong>景区星级:</strong></span>
+                                        <span class="level"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </span>
                                     </li><!--//item-->
                                     <li class="item">
-                                        <span class="title"><strong>Spanish:</strong></span>
-                                        <span class="level">Professional Proficiency <br class="visible-sm visible-xs"/><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-half"></i></span>
+                                        <span class="title"><strong>服务星级:</strong></span>
+                                        <span class="level"><br class="visible-sm visible-xs"/><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </span>
                                     </li><!--//item-->
                                 </ul>
                             </div><!--//content-->
@@ -218,7 +284,13 @@
   
     </footer>
 
-
+<div class="copyright wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">
+        <div class="container">
+          <span>Copyright &copy; <a style= "color:#555555" href="http://2017.jsjds.org/">2017 中国大学生计算机设计大赛比赛用&nbsp&nbsp|&nbsp&nbsp</a></span>
+                    <span><a style= "color:#555555" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=34019102000116" target="_blank"><img src="http://image.cangye.me//static/image/beian.png" alt="police beian" >皖公网安备 34019102000116号</a></span></center> 
+     
+        </div>
+      </div>
 
 </body>
 </html>

@@ -8,13 +8,13 @@
         <meta name="keywords" content="独景，旅游，博客" />
         <meta name="description" content="">
         <meta name="author" content="">
-        <link rel="shortcut icon" href="icon/Dicon.ico">
+        <link rel="shortcut icon" href="http://image.cangye.me//static/icon/Dicon.ico">
        
         <title>独景网-游记</title>
 
             <!--   Le Styles  -->
-        <link rel="stylesheet" href="css/bootstrap.css"/>
-        <link rel="stylesheet" href="css/custom.css"/>
+        <link rel="stylesheet" href="http://image.cangye.me//static/ss/bootstrap.css"/>
+        <link rel="stylesheet" href="http://image.cangye.me//static/css/custom.css"/>
         <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
 
         <!-- HTML5 shim, for IE6-8 support of HTML5 elements  -->
@@ -26,9 +26,19 @@
           <link href="//netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome-ie7.css" rel="stylesheet">
         <![endif]-->
         
-        <script type="text/javascript" src="js/jquery-2.0.0.min.js"></script>
-        <script type="text/javascript" src="js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="js/modernizr.custom.js"></script>
+        <script type="text/javascript" src="http://image.cangye.me//static/js/jquery-2.0.0.min.js"></script>
+        <script type="text/javascript" src="http://image.cangye.me//static/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="http://image.cangye.me//static/js/modernizr.custom.js"></script>
+        <style type="text/css">
+        .copyright {
+    background: #111;
+    font-size: 13px;
+    text-align: center;
+    color: #555555;
+    padding-top: 28px;
+    padding-bottom: 28px;
+    border-top: 1px solid #303030;
+}</style>
     </head>
 
 <body>
@@ -45,21 +55,21 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a href="index.html" class="navbar-brand">独景网</a>
+                            <a href="{% url 'index' %}" class="navbar-brand">独景网</a>
                         </div>
 
                         <div class="collapse navbar-collapse" id="demo-navbar">
                             <ul class="nav navbar-nav">
-                                <li class="active"><a href="index.html">首页</a></li>
-                                <li><a href="djread.html">读景</a></li>
-                                <li><a href="djsearch.html">寻景</a></li>
-                                <li><a href="blog.html">博客</a></li>
-                                <li><a href="user.html">用户</a></li>
+                                <li class="active"><a href="{% url 'index' %}">首页</a></li>
+                                <li><a href="{% url 'djread' %}'">读景</a></li>
+                                <li><a href="{% url 'djsearch' %}">寻景</a></li>
+                                <li><a href="#">博客</a></li>
+                                <li><a href="{% url 'user' %}">用户</a></li>
                                 <li><a href="##" data-toggle="modal" data-target="#about">关于</a></li>
                             </ul>
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a class="btn btn-default" href="sign_in.html">登录</a></li>
-                                <li><a class="btn big-default" href="sign_up.html">注册</a></li>
+                                <li><a class="btn" href="{% url 'login' %}">登录</a></li>
+                                <li><a class="btn" href="{% url 'register' %}">注册</a></li>
                             </ul>
                         </div>
                     </div><!-- col-sm -->
@@ -93,54 +103,201 @@
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="section-header">
-                        <img src="image/project-featured.png" alt="blog-picture" />
+                        <img src="http://image.cangye.me//static/image/project-featured03.jpg" alt="blog-picture" />
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="primary col-md-8 col-sm-12-xs-12">
-                     <section class="latest section">
-                         <div class="section-inner">
-                             <h2 class="heading">剑起沧澜</h2>
-                             <div class="content">    
-                                                    
-                                 <div class="item featured text-center">
-                                    <h3 class="title"><a href="blog_proflie1.html" target="_blank">云南之行</a></h3>
-                                     <p class="summary">第一次去云南怎么玩？这样选路线绝对没错！</p>
-                                     <div class="featured-image">
-                                         <a href="#website-templates/responsive-bootstrap-theme-for-products-velocity/" target="_blank">
-                                         <img class="img-responsive project-image" src="image/project-featured.png" alt="project name" />
-                                         </a>
-                                         <div class="ribbon">
-                                             <div class="text">New</div>
-                                             </div>
-                                         </div>
-                                         
-                                     <div class="desc text-left">                                    
-                                         <p>如果你也来一场说走就走的旅行，目的地会是哪？来云南吧，在这里，你会遇到云梦萦绕的山，会遇到满江春意水。淳朴善良的人儿会让你释然，你所及的一丘一壑都将书写为诗意的人生。云南那么大，第一次玩路线如何选择？告诉你这么玩一定不后悔。</p>
-                                         <p>大理和洱海是滇西北不可不去的一站。一条相当周到的2日游路线，基本上精华的景点都去到了。上万蝴蝶齐飞的蝴蝶泉，风光秀丽的洱海，洱海上的明珠南邵岛，比大理古城更原汁原味的大理古城，文创店铺林立的洋人街，千年历史的崇圣寺三塔，还有闲适的环洱海骑行时间。</p>
-                                     </div><!--//desc-->         
-                                     <a class="btn btn-cta-secondary" href="blog_proflie1.html" target="_blank"><i class="fa fa-thumbs-o-up"></i> 阅读全文</a>                 
-                                 </div><!--//item-->
-                            </div><!--//content-->  
-                        </div><!--//section-inner-->                 
-                    </section><!--//section-->
-                </div>
+                  <!-- ================  aritcle ================-->
+    <div class="local-con clearfix">
+        <div class="sideL">
+          <div class="_j_content">
+                      <div class="f-block">
+                        <h2>红枫黄桐柳丝纤，残荷画舫西湖烟</h2>
+                      </div>
+                      <div class="f-block">
+                        <div class="p-section">
+                          杭州西湖位于“上有天堂，下有苏杭”的浙江省杭州市，以秀丽的湖光山色和众多的名胜古迹而成为闻名中外的旅游胜地。<br>杭州以其美丽的西湖山水著称于世，素有“人间天堂”的美誉，表达了古往今来的人们对于这座美丽城市的由衷赞美。<br>
+
+                        </div><!-- /. p-section -->
+                    </div>
+                      <div class="f-block">
+                        <img class="_j_lazyload" src="http://image.cangye.me//static/image/blog3/xihu01.jpg" data-src="" data-rt-src="">
+                      </div>
+
+                      <div class="f-block">
+                        <div class="p-section">
+                            杭州西湖作为世界上少见的持续千年经久不衰的盛景，与其说是大自然的恩赐，不如说是人类文明的凝结。西湖历经无数前人尽心维护，始终保持着醉人的美景。西湖不光是华人的骄傲，更是东亚文化圈的憧憬。<br>
+                            如果你游完西湖觉得一般，那一定是因为你的姿势水平还不到位，不知道该怎么玩。西湖诸多景点中，最精华、最经典、最不容错过的，当然是西湖十景了。<br>
+                        </div>
+                      </div>
+
+                      <div class="f-block">
+                        <img class="_j_lazyload" src="http://image.cangye.me//static/image/blog3/xihu02.jpg" data-src="" data-rt-src="">
+                      </div>
+
+                      <div class="f-block">
+                        <h2>西湖十景</h2>
+                      </div>
+                       <div class="f-block">
+                        <h2>1、雷峰夕照</h2>
+                      </div>
+                      
+                      <div class="f-block">
+                        <div class="p-section">
+        夕照山的雷峰塔，就是当年法海困住白娘子的地方。只要天气状况OK，在雷锋塔顶层，可以俯瞰碧波荡漾的西湖、秀美端庄的汪庄、初见轮廓的南线新景点，以及绿意葱笼的湖心三岛。<br>
+                        </div>
+                      </div>
+                                            
+                     <div class="f-block">
+                        <img class="_j_lazyload" src="http://image.cangye.me//static/image/blog3/xihu1.jpg" data-src="" data-rt-src="">       
+                    </div>
+
+                    <div class="f-block">
+                      <h3>2、苏堤春晓</h3>
+                    </div>
+                      
+                    <div class="f-block">
+                       <div class="p-section">
+                           苏堤就是苏东坡当年建的纵贯整个西湖的长堤，堤上建有六座桥，每逢春日，杨柳夹岸、艳桃灼灼，更有湖波如镜、映照倩影。<br>
+                        </div>
+                    </div>
+                    <div class="f-block">
+                      <img class="_j_lazyload" src="http://image.cangye.me//static/image/blog3/xihu2.jpg" data-src="" data-rt-src="">
+                    </div>
+                   
+                    <div class="f-block">
+                      <h3>3、平湖秋月</h3>
+                    </div>
+                      
+                    <div class="f-block">
+                       <div class="p-section">
+                           平湖秋月位于孤山南麓与白居易所筑的白堤之间，是视野开阔、意境清幽的泛舟赏月之地，也是西湖北岸临湖观赏西湖水域全景的最佳地点。至今保留着昔日康熙和乾隆喜爱的“一院、一楼、一碑、一亭”建筑格局。<br>
+                        </div>
+                    </div>
+
+                    <div class="f-block">
+                      <img class="_j_lazyload" src="http://image.cangye.me//static/image/blog3/xihu3.jpg" data-src="" data-rt-src="">
+                    </div>
+
+
+
+                    <div class="f-block">
+                      <h3>4、断桥残雪</h3>
+                    </div>
+                      
+                    <div class="f-block">
+                       <div class="p-section">
+                           位于白堤东端的断桥一带，中国最热闹的桥之一，因为它就是白娘子和许仙相遇的那个断桥。断桥并不是断的，只是因为当西湖雪后初晴时，日出映照，断桥向阳的半边桥面上积雪融化、露出褐色的桥面一痕，仿佛长长的白链到此中断了。<br>
+                        </div>
+                    </div>
+
+                    <div class="f-block">
+                      <img class="_j_lazyload" src="http://image.cangye.me//static/image/blog3/xihu4.jpg" data-src="" data-rt-src="">
+                    </div>
+
+                    <div class="f-block">
+                      <h3>5、曲院风荷</h3>
+                    </div>
+                      
+                    <div class="f-block">
+                       <div class="p-section">
+                           位于苏堤北端西侧，以夏日观荷为主题，在视觉上呈现出“接天连叶无穷碧，映日荷花别样红”的特色。曲院的曲是酒曲的曲，南宋时在此有酿酒作坊，每逢夏日荷香与酒香齐飘，固有“暖风熏得游人醉，直把杭州作汴州”的典故。<br>
+                        </div>
+                    </div>
+
+                    <div class="f-block">
+                      <img class="_j_lazyload" src="http://image.cangye.me//static/image/blog3/xihu5.jpg" data-src="" data-rt-src="">
+                    </div>
+
+                    <div class="f-block">
+                      <h3>6、南屏晚钟</h3>
+                    </div>
+                      
+                    <div class="f-block">
+                       <div class="p-section">
+                           南屏晚钟是西湖十景中历史最悠久的景点。每逢早晚，西湖南岸南屏山净慈寺的佛钟敲响，钟声振荡传到山上的岩石、洞穴，随之形成悠扬的共鸣，半个杭州城都能听到。<br>
+                        </div>
+                    </div>
+
+                    <div class="f-block">
+                      <img class="_j_lazyload" src="http://image.cangye.me//static/image/blog3/xihu6.jpg" data-src="" data-rt-src="">
+                    </div>
+
+                    <div class="f-block">
+                      <h3>7、花港观鱼</h3>
+                    </div>
+                      
+                    <div class="f-block">
+                       <div class="p-section">
+                           位于苏堤映波桥西北，全园分为红鱼池、牡丹园、花港、大草坪、密林地五个景区，以赏花、观鱼为景观主题，游人可体验自然的勃勃生机。<br>
+                        </div>
+                    </div>
+
+                    <div class="f-block">
+                      <img class="_j_lazyload" src="http://image.cangye.me//static/image/blog3/xihu7.jpg" data-src="" data-rt-src="">
+                    </div>
+
+                    <div class="f-block">
+                      <h3>8、柳浪闻莺</h3>
+                    </div>
+                      
+                    <div class="f-block">
+                       <div class="p-section">
+                          从南宋的御花园“聚景园”改建而来，以观赏滨湖的柳林景观为主题。园中多植柳树，柳丛衬托着紫楠、雪松、广玉兰、梅花等异木名花，每到春天，各种鸟雀来此齐聚，河岸绵长，柳丝拂面，莺鸟鸣啼，风摆成浪，且行且听，好一派生机盎然的景象。<br>
+                        </div>
+                    </div>
+
+                    <div class="f-block">
+                      <img class="_j_lazyload" src="http://image.cangye.me//static/image/blog3/xihu8.jpg" data-src="" data-rt-src="">
+                    </div>
+
+                    <div class="f-block">
+                      <h3>9、双峰插云</h3>
+                    </div>
+                      
+                    <div class="f-block">
+                       <div class="p-section">
+                           双峰插云是西湖十景中，观赏姿势水平要求最高的一景，高到只能用玄学来形容。因为现在的建筑物、植被、天气、空气质量、角度和位置等诸多原因，一般游客很难看到。<br>
+                        </div>
+                    </div>
+
+                    <div class="f-block">
+                      <img class="_j_lazyload" src="http://image.cangye.me//static/image/blog3/xihu9.jpg" data-src="" data-rt-src="">
+                    </div>
+
+                    <div class="f-block">
+                      <h3>10、三潭印月</h3>
+                    </div>
+                      
+                    <div class="f-block">
+                       <div class="p-section">
+                           最好的被留在最后，三潭印月被称为西湖第一胜景，西湖景区的精华，中国最有名的景点之一，北京圆明园有仿造的版本。它是在西湖中建成的一块人工岛，具有湖中有岛，岛中有湖，园中有园，曲回多变，步移景新的江南水上庭园的艺术特色。<br>
+                        </div>
+                    </div>
+
+                    <div class="f-block">
+                      <img class="_j_lazyload" src="http://image.cangye.me//static/image/blog3/xihu10.jpg" data-src="" data-rt-src="">
+                    </div>
+
+
+          </div><!--  /. _j_content -->
+        </div><!-- /. sideL -->
+    </div><!-- /. local-con clearifx -->
+                    <!-- ========================  aritcle  end ==========-->
+                </div><!-- /. primary -->
                 <div class="secondary col-md-4 col-sm-12-xs-12">
-                     <aside class="languages aside section">
+                     <aside class="aside section">
                         <div class="section-inner">
-                            <h2 class="heading">Languages</h2>
+                            <h2 class="heading">作者</h2>
                             <div class="content">
-                                <ul class="list-unstyled">
-                                    <li class="item">
-                                        <span class="title"><strong>English:</strong></span>
-                                        <span class="level">Native Speaker <br class="visible-xs"/><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </span>
-                                    </li><!--//item-->
-                                    <li class="item">
-                                        <span class="title"><strong>Spanish:</strong></span>
-                                        <span class="level">Professional Proficiency <br class="visible-sm visible-xs"/><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-half"></i></span>
-                                    </li><!--//item-->
-                                </ul>
+                              <div class="item">
+                                 <h3><img src="http://image.cangye.me//static/image/bloger3.jpg" alt="bloger1" />  孤独川陵</h3>
+                              </div>
+                              <div class="item">
+                                  <p>从事旅游行业16年，想了解杭州一地及杭州周边旅游，尽管咨询</p>
+                              </div>
                             </div><!--//content-->
                         </div><!--//section-inner-->
                     </aside><!--//section-->
@@ -148,25 +305,6 @@
             </div>
         </div>
      </main>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -217,7 +355,13 @@
       </div>
   
     </footer>
-
+<div class="copyright wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">
+        <div class="container">
+          <span>Copyright &copy; <a style= "color:#555555" href="http://2017.jsjds.org/">2017 中国大学生计算机设计大赛比赛用&nbsp&nbsp|&nbsp&nbsp</a></span>
+                    <span><a style= "color:#555555" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=34019102000116" target="_blank"><img src="http://image.cangye.me//static/image/beian.png" alt="police beian" >皖公网安备 34019102000116号</a></span></center> 
+     
+        </div>
+      </div>
 
 
 </body>

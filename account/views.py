@@ -78,7 +78,7 @@ class loginView(View):
 			if user is not None:
 				if user.is_active:
 					login(request,user)
-					return render(request,"register_success.html")
+					return render(request,"index.html")
 				else:
 					return render(request, "login.html", {"msg": "用户名或密码错误!"})
 			else:
@@ -149,3 +149,22 @@ def email_send(request):
 	return render(request,"email_send.html")
 def register_success(request):
 	return render(request,"register_success.html")
+
+
+def blog_proflie1(request):
+	return render(request,"blog_proflie1.html")
+
+def blog_proflie2(request):
+	return render(request,"blog_proflie2.html")
+
+def blog_proflie3(request):
+	return render(request,"blog_proflie3.html")
+
+def search_place1(request):
+	return render(request,"search_place1.html")
+
+def search_place2(request):
+	return render(request,"search_place2.html")
+
+def search_place3(request):
+	return render(request,"search_place3.html")

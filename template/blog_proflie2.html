@@ -8,13 +8,13 @@
         <meta name="keywords" content="独景，旅游，博客" />
         <meta name="description" content="">
         <meta name="author" content="">
-        <link rel="shortcut icon" href="icon/Dicon.ico">
+        <link rel="shortcut icon" href="http://image.cangye.me//static/icon/Dicon.ico">
        
         <title>独景网-游记</title>
 
             <!--   Le Styles  -->
-        <link rel="stylesheet" href="css/bootstrap.css"/>
-        <link rel="stylesheet" href="css/custom.css"/>
+        <link rel="stylesheet" href="http://image.cangye.me//static/css/bootstrap.css"/>
+        <link rel="stylesheet" href="http://image.cangye.me//static/css/custom.css"/>
         <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
 
         <!-- HTML5 shim, for IE6-8 support of HTML5 elements  -->
@@ -26,9 +26,19 @@
           <link href="//netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome-ie7.css" rel="stylesheet">
         <![endif]-->
         
-        <script type="text/javascript" src="js/jquery-2.0.0.min.js"></script>
-        <script type="text/javascript" src="js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="js/modernizr.custom.js"></script>
+        <script type="text/javascript" src="http://image.cangye.me//static/js/jquery-2.0.0.min.js"></script>
+        <script type="text/javascript" src="http://image.cangye.me//static/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="http://image.cangye.me//static/js/modernizr.custom.js"></script>
+        <style type="text/css">
+        .copyright {
+    background: #111;
+    font-size: 13px;
+    text-align: center;
+    color: #555555;
+    padding-top: 28px;
+    padding-bottom: 28px;
+    border-top: 1px solid #303030;
+}</style>
     </head>
 
 <body>
@@ -45,21 +55,21 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a href="index.html" class="navbar-brand">独景网</a>
+                            <a href="{% url 'index' %}" class="navbar-brand">独景网</a>
                         </div>
 
                         <div class="collapse navbar-collapse" id="demo-navbar">
                             <ul class="nav navbar-nav">
-                                <li class="active"><a href="index.html">首页</a></li>
-                                <li><a href="djread.html">读景</a></li>
-                                <li><a href="djsearch.html">寻景</a></li>
-                                <li><a href="blog.html">博客</a></li>
-                                <li><a href="user.html">用户</a></li>
+                                <li class="active"><a href="{% url 'index' %}">首页</a></li>
+                                <li><a href="{% url 'djread' %}">读景</a></li>
+                                <li><a href="{% url 'djsearch' %}">寻景</a></li>
+                                <li><a href="#">博客</a></li>
+                                <li><a href="{% url 'user' %}">用户</a></li>
                                 <li><a href="##" data-toggle="modal" data-target="#about">关于</a></li>
                             </ul>
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a class="btn btn-default" href="sign_in.html">登录</a></li>
-                                <li><a class="btn big-default" href="sign_up.html">注册</a></li>
+                                <li><a class="btn" href="{% url 'login' %}">登录</a></li>
+                                <li><a class="btn" href="{% url 'register' %}">注册</a></li>
                             </ul>
                         </div>
                     </div><!-- col-sm -->
@@ -93,54 +103,113 @@
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="section-header">
-                        <img src="image/project-featured.png" alt="blog-picture" />
+                        <img src="http://image.cangye.me//static/image/project-featured02.jpg" alt="blog-picture" />
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="primary col-md-8 col-sm-12-xs-12">
-                     <section class="latest section">
-                         <div class="section-inner">
-                             <h2 class="heading">剑起沧澜</h2>
-                             <div class="content">    
-                                                    
-                                 <div class="item featured text-center">
-                                    <h3 class="title"><a href="blog_proflie1.html" target="_blank">云南之行</a></h3>
-                                     <p class="summary">第一次去云南怎么玩？这样选路线绝对没错！</p>
-                                     <div class="featured-image">
-                                         <a href="#website-templates/responsive-bootstrap-theme-for-products-velocity/" target="_blank">
-                                         <img class="img-responsive project-image" src="image/project-featured.png" alt="project name" />
-                                         </a>
-                                         <div class="ribbon">
-                                             <div class="text">New</div>
-                                             </div>
-                                         </div>
-                                         
-                                     <div class="desc text-left">                                    
-                                         <p>如果你也来一场说走就走的旅行，目的地会是哪？来云南吧，在这里，你会遇到云梦萦绕的山，会遇到满江春意水。淳朴善良的人儿会让你释然，你所及的一丘一壑都将书写为诗意的人生。云南那么大，第一次玩路线如何选择？告诉你这么玩一定不后悔。</p>
-                                         <p>大理和洱海是滇西北不可不去的一站。一条相当周到的2日游路线，基本上精华的景点都去到了。上万蝴蝶齐飞的蝴蝶泉，风光秀丽的洱海，洱海上的明珠南邵岛，比大理古城更原汁原味的大理古城，文创店铺林立的洋人街，千年历史的崇圣寺三塔，还有闲适的环洱海骑行时间。</p>
-                                     </div><!--//desc-->         
-                                     <a class="btn btn-cta-secondary" href="blog_proflie1.html" target="_blank"><i class="fa fa-thumbs-o-up"></i> 阅读全文</a>                 
-                                 </div><!--//item-->
-                            </div><!--//content-->  
-                        </div><!--//section-inner-->                 
-                    </section><!--//section-->
-                </div>
+                  <!-- ================  aritcle ================-->
+    <div class="local-con clearfix">
+        <div class="sideL">
+          <div class="_j_content">
+                      <div class="f-block">
+                      <h2>没有到过黄山，黄山永远只是一个概念，登一次黄山，你就什么都清楚了</h2>
+                      </div>
+                      <div class="f-block">
+                        <div class="p-section">
+                          来到黄山，一下子就被满眼苍松翠柏吸引住了，奇形怪状的山峰以及石头，高高地耸立，几乎顶住天空。抬起头来，立即产生“高山仰止”的感受。<br>
+
+                        </div><!-- /. p-section -->
+                    </div>
+                      <div class="f-block">
+                        <img class="_j_lazyload" src="http://image.cangye.me//static/image/blog2/huang1.jpg" data-src="" data-rt-src="">
+                      </div>
+
+                      <div class="f-block">
+                        <div class="p-section">
+                          阳光是光明之源，阳光亮堂堂地照在我的脸上、身上，整个人就感觉被它注入了力量。我很幸庆自己赶上了黄山的好天气，虽没见到云海，却能在清澈的意境里登山，看四周清澈的景物，领悟澄澈的思想。<br>
+                        </div>
+                      </div>
+
+                    <div class="f-block">
+                        <img class="_j_lazyload" src="http://image.cangye.me//static/image/blog2/huang2.jpg" data-src="" data-rt-src="">
+                      </div>
+
+                      <div class="f-block">
+                        <div class="p-section">
+                            山就在身边，在高处。抬眼看山，感觉自己是被倚在古松之中，山变得高大宽阔，人却是那样的低矮渺小。也只有在这个时候，才能感到大自然比人有力量得多。<br>
+                        </div>
+                      </div>
+
+                      <div class="f-block">
+                           <img class="_j_lazyload" src="http://image.cangye.me//static/image/blog2/huang3.jpg" data-src="" data-rt-src="">
+                      </div>
+
+
+                      <div class="f-block">
+                        <div class="p-section">
+        我俯视群山之间的高度，却不见一个千年的时空背景，谁的低语会顺着风潜入山的经脉呢。我一直想远离尘世喧嚣，起落的心，逐渐平静，只剩下静默的思想<br>
+                        </div>
+                      </div>
+                      
+                      
+                     <div class="f-block">
+                        <img class="_j_lazyload" src="http://image.cangye.me//static/image/blog2/huang4.jpg" data-src="" data-rt-src="">       
+                    </div>
+
+                    
+                    <div class="f-block">
+                       <div class="p-section">
+                           黄山历来享有“五岳归来不看山，黄山归来不看岳”的美誉。在距离黄山脚下不远处，有翡翠谷（情人谷）、九龙瀑、石门峡等景点<br>
+                        </div>
+                    </div>
+                    <div class="f-block">
+                      <img class="_j_lazyload" src="http://image.cangye.me//static/image/blog2/huang5.jpg" data-src="" data-rt-src="">
+                    </div>
+                    <div class="f-block">
+                      <div class="p-section">
+                      除了这些，还有宏村、西递、卢村、塔川等这些蕴含徽州文化底蕴的村庄让人流连忘返。你是不是没有想到原来黄山还有这么多令人心醉的景点，而且这些点刚好可以串联成一个三日环线。<br>
+                       </div>
+                    </div>
+                    <div class="f-block">
+                      <img class="_j_lazyload" src="http://image.cangye.me//static/image/blog2/huang6.jpg" data-src="" data-rt-src="">
+                    </div>
+                    <div class="f-block">
+                      <div class="p-section">
+                      宏村是徽派民居村落中最具代表性的村子，素有“中国画里的乡村”之美誉。《卧虎藏龙》也曾在此取景拍摄，村外的南湖桥是李慕白牵马走过的桥，村中的月沼是玉娇龙点水而过的地方。在宏村里，仿佛在画中行走，每走一处都是美景。<br>
+                       </div>
+                    </div>
+
+                    <div class="f-block">
+                      <img class="_j_lazyload" src="http://image.cangye.me//static/image/blog2/huang7.jpg" data-src="" data-rt-src="">
+                    </div>
+                    <div class="f-block">
+                      <div class="p-section">
+                      有“孔雀公主”杨丽萍监制的《黄山映像》演出，与现代舞蹈、杂技、武术等多种元素完美融合在一起，让我们的眼睛和耳朵都享受一场饕餮盛宴！
+                       </div>
+                    </div>
+                    <div class="f-block">
+                      <img class="_j_lazyload" src="http://image.cangye.me//static/image/blog2/huang8.jpg" data-src="" data-rt-src="">
+                    </div>
+
+
+          </div><!--  /. _j_content -->
+        </div><!-- /. sideL -->
+    </div><!-- /. local-con clearifx -->
+                    <!-- ========================  aritcle  end ==========-->
+                </div><!-- /. primary -->
                 <div class="secondary col-md-4 col-sm-12-xs-12">
-                     <aside class="languages aside section">
+                     <aside class="aside section">
                         <div class="section-inner">
-                            <h2 class="heading">Languages</h2>
+                            <h2 class="heading">作者</h2>
                             <div class="content">
-                                <ul class="list-unstyled">
-                                    <li class="item">
-                                        <span class="title"><strong>English:</strong></span>
-                                        <span class="level">Native Speaker <br class="visible-xs"/><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </span>
-                                    </li><!--//item-->
-                                    <li class="item">
-                                        <span class="title"><strong>Spanish:</strong></span>
-                                        <span class="level">Professional Proficiency <br class="visible-sm visible-xs"/><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-half"></i></span>
-                                    </li><!--//item-->
-                                </ul>
+                              <div class="item">
+                                 <h3><img src="http://image.cangye.me//static/image/bloger2.jpg" alt="bloger1" />  七色地图</h3>
+                              </div>
+                              <div class="item">
+                                  <p>拥有丰富的黄山旅游经验，有关黄山的吃喝玩乐样样精通，带你遇见最美的风景和品尝最地道的美食</p>
+                              </div>
                             </div><!--//content-->
                         </div><!--//section-inner-->
                     </aside><!--//section-->
@@ -148,27 +217,6 @@
             </div>
         </div>
      </main>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     <footer>
       <div class="container">
@@ -217,7 +265,13 @@
       </div>
   
     </footer>
-
+<div class="copyright wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">
+        <div class="container">
+          <span>Copyright &copy; <a style= "color:#555555" href="http://http://2017.jsjds.org/">2017 中国大学生计算机设计大赛比赛用&nbsp&nbsp|&nbsp&nbsp</a></span>
+                    <span><a style= "color:#555555" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=34019102000116" target="_blank"><img src="http://image.cangye.me//static/image/beian.png" alt="police beian" >皖公网安备 34019102000116号</a></span></center> 
+     
+        </div>
+      </div>
 
 
 </body>

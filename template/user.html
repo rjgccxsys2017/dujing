@@ -8,13 +8,13 @@
         <meta name="keywords" content="独景，旅游，博客" />
         <meta name="description" content="">
         <meta name="author" content="">
-        <link rel="shortcut icon" href="/static/icon/Dicon.ico">
+        <link rel="shortcut icon" href="http://image.cangye.me//static/icon/Dicon.ico">
        
         <title>独景网-个人主页</title>
 
             <!--   Le Styles  -->
-        <link rel="stylesheet" href="/static/css/bootstrap.css"/>
-        <link rel="stylesheet" href="/static/css/custom.css"/>
+        <link rel="stylesheet" href="http://image.cangye.me//static/css/bootstrap.css"/>
+        <link rel="stylesheet" href="http://image.cangye.me//static/css/custom.css"/>
         <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
 
         <!-- HTML5 shim, for IE6-8 support of HTML5 elements  -->
@@ -26,11 +26,16 @@
           <link href="//netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome-ie7.css" rel="stylesheet">
         <![endif]-->
         
-        <script type="text/javascript" src="/static/js/jquery-2.0.0.min.js"></script>
-        <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="/static/js/modernizr.custom.js"></script>
-        <style type="text/css">
-      .copyright {
+        <script type="text/javascript" src="http://image.cangye.me//static/js/jquery-2.0.0.min.js"></script>
+        <script type="text/javascript" src="http://image.cangye.me//static/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="http://image.cangye.me//static/js/modernizr.custom.js"></script>
+
+                <!-- Ueditor -->
+        <script type="text/javascript" charset="utf-8" src="/static/editor/ueditor.config.js"></script>
+        <script type="text/javascript" charset="utf-8" src="/static/editor/ueditor.all.min.js"> </script>
+        <script type="text/javascript" charset="utf-8" src="/static/editor/lang/zh-cn/zh-cn.js"></script>
+<style type="text/css">
+        .copyright {
     background: #111;
     font-size: 13px;
     text-align: center;
@@ -38,9 +43,13 @@
     padding-top: 28px;
     padding-bottom: 28px;
     border-top: 1px solid #303030;
-}
+}</style>
+    <style type="text/css">
+        div{
+            width:100%;
+        }
     </style>
-    </head>
+</head>
 
 <body>
                                
@@ -95,10 +104,10 @@
 
     <div class="user">
         <div class="container">                       
-            <img class="profile-image img-responsive pull-left" src="/static/image/profile.png" alt="James Lee" />
+            <img class="profile-image img-responsive pull-left" src="http://image.cangye.me//static/image/profile.png" alt="James Lee" />
             <div class="profile-content pull-left">
                 <h1 class="name">剑起沧澜</h1>
-                <h2 class="desc">旅行爱好者</h2>   
+                <h2 class="">旅行爱好者</h2>   
                 <ul class="social list-inline">
                     <li><a href="#"><i class="fa fa-twitter"></i></a></li>                   
                     <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
@@ -116,35 +125,12 @@
         <div class="container sections-wrapper">
             <div class="row">
                 <div class="primary col-md-8 col-sm-12 col-xs-12">
-
-
-                    <section class="latest section">
-                         <div class="section-inner">
-                             <h2 class="heading">剑起沧澜</h2>
-                             <div class="content">    
-                                                    
-                                 <div class="item featured text-center">
-                                    <h3 class="title"><a href="blog_proflie1.html" target="_blank">云南之行</a></h3>
-                                     <p class="summary">第一次去云南怎么玩？这样选路线绝对没错！</p>
-                                     <div class="featured-image">
-                                         <a href="#">
-                                         <img class="img-responsive project-image" src="/static/image/project-featured01.png" alt="project name" />
-                                         </a>
-                                         <div class="ribbon">
-                                             <div class="text">New</div>
-                                             </div>
-                                         </div>
-                                         
-                                     <div class="desc text-left">                                    
-                                         <p>如果你也来一场说走就走的旅行，目的地会是哪？来云南吧，在这里，你会遇到云梦萦绕的山，会遇到满江春意水。淳朴善良的人儿会让你释然，你所及的一丘一壑都将书写为诗意的人生。云南那么大，第一次玩路线如何选择？告诉你这么玩一定不后悔。</p>
-                                         <p>大理和洱海是滇西北不可不去的一站。一条相当周到的2日游路线，基本上精华的景点都去到了。上万蝴蝶齐飞的蝴蝶泉，风光秀丽的洱海，洱海上的明珠南邵岛，比大理古城更原汁原味的大理古城，文创店铺林立的洋人街，千年历史的崇圣寺三塔，还有闲适的环洱海骑行时间。</p>
-                                     </div><!--//desc-->         
-                                     <a class="btn btn-cta-secondary" href="blog_proflie1.html" target="_blank"><i class="fa fa-thumbs-o-up"></i> 阅读全文</a>                 
-                                 </div><!--//item-->
-                            </div><!--//content-->  
-                        </div><!--//section-inner-->                 
-                    </section><!--//section-->
-
+                <form action="server.php" method="post">
+                    <!-- 加载编辑器的容器 -->
+                    <script id="editor" name="content" type="text/plain" style="width:700px;height:500px;">
+                        在这里开始你的游记
+                    </script>
+                </form>
 
                 </div><!-- /. primary -->
 
@@ -154,21 +140,8 @@
 
 
                     <div class="panel-group" id="help-nav">
-                      <div class="panel active">
-                        <div class="panel-heading bg-panelh">
-                          <a data-toggle="collapse" data-parent="#help-nav" href="#help-nav-one">
-                            博客等级
-                          </a>
-                        </div>
-                        <div id="help-nav-one" class="panel-collapse collapse in">
-                          <div class="panel-body bg-panelb">
-                            <p>
-                              ...................................................
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="panel">
+
+                     <div class="panel">
                         <div class="panel-heading bg-panelh">
                           <a data-toggle="collapse" data-parent="#help-nav" href="#help-nav-two" class="collapsed">
                             发表游记
@@ -182,6 +155,22 @@
                           </div>
                         </div>
                       </div>
+
+                      <div class="panel">
+                        <div class="panel-heading bg-panelh">
+                          <a data-toggle="collapse" data-parent="#help-nav" href="#help-nav-one">
+                            博客等级
+                          </a>
+                        </div>
+                        <div id="help-nav-one" class="panel-collapse collapse in">
+                          <div class="panel-body bg-panelb">
+                            <p>
+                              ...................................................
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                     
                       <div class="panel">
                         <div class="panel-heading bg-panelh">
                           <a data-toggle="collapse" data-parent="#help-nav" href="#help-nav-three" class="collapsed">
@@ -280,8 +269,8 @@
                 <div class="row">
                   <div class="col-xs-12">
                     <div class="input-group">
-                      <label class="sr-only" for="subscribe-email">请输入你的邮箱...</label>
-                      <input name="email1" type="email" class="form-control" id="subscribe-email" placeholder="请输入你的邮箱...">
+                      <label class="sr-only" for="subscribe-email">请输入你的要求...</label>
+                      <input type="email" class="form-control" id="subscribe-email" placeholder="请输入你的要求...">
                       <span class="input-group-btn">
                         <button type="submit" class="btn btn-success">发 送</button>
                       </span>
@@ -294,16 +283,127 @@
           </div>
         </div>   
   </footer>
-  <div class="copyright wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">
+<div class="copyright wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">
         <div class="container">
           <span>Copyright &copy; <a style= "color:#555555" href="http://2017.jsjds.org/">2017 中国大学生计算机设计大赛比赛用&nbsp&nbsp|&nbsp&nbsp</a></span>
-                    <span><a style= "color:#555555" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=34019102000116" target="_blank"><img src="/static/image/beian.png" alt="police beian" >皖公网安备 34019102000116号</a></span></center> 
+                    <span><a style= "color:#555555" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=34019102000116" target="_blank"><img src="http://image.cangye.me//static/image/beian.png" alt="police beian" >皖公网安备 34019102000116号</a></span></center> 
      
         </div>
       </div>
 
+<script type="text/javascript">
+
+    //实例化编辑器
+    //建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
+    var ue = UE.getEditor('editor');
 
 
+    function isFocus(e){
+        alert(UE.getEditor('editor').isFocus());
+        UE.dom.domUtils.preventDefault(e)
+    }
+    function setblur(e){
+        UE.getEditor('editor').blur();
+        UE.dom.domUtils.preventDefault(e)
+    }
+    function insertHtml() {
+        var value = prompt('插入html代码', '');
+        UE.getEditor('editor').execCommand('insertHtml', value)
+    }
+    function createEditor() {
+        enableBtn();
+        UE.getEditor('editor');
+    }
+    function getAllHtml() {
+        alert(UE.getEditor('editor').getAllHtml())
+    }
+    function getContent() {
+        var arr = [];
+        arr.push("使用editor.getContent()方法可以获得编辑器的内容");
+        arr.push("内容为：");
+        arr.push(UE.getEditor('editor').getContent());
+        alert(arr.join("\n"));
+    }
+    function getPlainTxt() {
+        var arr = [];
+        arr.push("使用editor.getPlainTxt()方法可以获得编辑器的带格式的纯文本内容");
+        arr.push("内容为：");
+        arr.push(UE.getEditor('editor').getPlainTxt());
+        alert(arr.join('\n'))
+    }
+    function setContent(isAppendTo) {
+        var arr = [];
+        arr.push("使用editor.setContent('欢迎使用ueditor')方法可以设置编辑器的内容");
+        UE.getEditor('editor').setContent('欢迎使用ueditor', isAppendTo);
+        alert(arr.join("\n"));
+    }
+    function setDisabled() {
+        UE.getEditor('editor').setDisabled('fullscreen');
+        disableBtn("enable");
+    }
+
+    function setEnabled() {
+        UE.getEditor('editor').setEnabled();
+        enableBtn();
+    }
+
+    function getText() {
+        //当你点击按钮时编辑区域已经失去了焦点，如果直接用getText将不会得到内容，所以要在选回来，然后取得内容
+        var range = UE.getEditor('editor').selection.getRange();
+        range.select();
+        var txt = UE.getEditor('editor').selection.getText();
+        alert(txt)
+    }
+
+    function getContentTxt() {
+        var arr = [];
+        arr.push("使用editor.getContentTxt()方法可以获得编辑器的纯文本内容");
+        arr.push("编辑器的纯文本内容为：");
+        arr.push(UE.getEditor('editor').getContentTxt());
+        alert(arr.join("\n"));
+    }
+    function hasContent() {
+        var arr = [];
+        arr.push("使用editor.hasContents()方法判断编辑器里是否有内容");
+        arr.push("判断结果为：");
+        arr.push(UE.getEditor('editor').hasContents());
+        alert(arr.join("\n"));
+    }
+    function setFocus() {
+        UE.getEditor('editor').focus();
+    }
+    function deleteEditor() {
+        disableBtn();
+        UE.getEditor('editor').destroy();
+    }
+    function disableBtn(str) {
+        var div = document.getElementById('btns');
+        var btns = UE.dom.domUtils.getElementsByTagName(div, "button");
+        for (var i = 0, btn; btn = btns[i++];) {
+            if (btn.id == str) {
+                UE.dom.domUtils.removeAttributes(btn, ["disabled"]);
+            } else {
+                btn.setAttribute("disabled", "true");
+            }
+        }
+    }
+    function enableBtn() {
+        var div = document.getElementById('btns');
+        var btns = UE.dom.domUtils.getElementsByTagName(div, "button");
+        for (var i = 0, btn; btn = btns[i++];) {
+            UE.dom.domUtils.removeAttributes(btn, ["disabled"]);
+        }
+    }
+
+    function getLocalData () {
+        alert(UE.getEditor('editor').execCommand( "getlocaldata" ));
+    }
+
+    function clearLocalData () {
+        UE.getEditor('editor').execCommand( "clearlocaldata" );
+        alert("已清空草稿箱")
+    }
+</script>
 
 
 
