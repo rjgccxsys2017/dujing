@@ -8,13 +8,13 @@
         <meta name="keywords" content="独景，旅游，博客" />
         <meta name="description" content="">
         <meta name="author" content="">
-        <link rel="shortcut icon" href="icon/Dicon.ico">
+        <link rel="shortcut icon" href="/static/icon/Dicon.ico">
        
         <title>独景网</title>
 
             <!--   Le Styles  -->
-        <link rel="stylesheet" href="css/bootstrap.css"/>
-        <link rel="stylesheet" href="css/custom.css"/>
+        <link rel="stylesheet" href="/static/css/bootstrap.css"/>
+        <link rel="stylesheet" href="/static/css/custom.css"/>
         <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
 
         <!-- HTML5 shim, for IE6-8 support of HTML5 elements  -->
@@ -25,9 +25,9 @@
         <!--[if IE 7]>
           <link href="//netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome-ie7.css" rel="stylesheet">
         <![endif]-->
-        <script type="text/javascript" src="js/jquery-2.0.0.min.js"></script>
-        <script type="text/javascript" src="js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="js/modernizr.custom.js"></script>
+        <script type="text/javascript" src="/static/js/jquery-2.0.0.min.js"></script>
+        <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/static/js/modernizr.custom.js"></script>
 
     </head>
 
@@ -42,8 +42,9 @@
             <div class="sign text-center">
               <div class="panel panel-default">
                 <div class="panel-body">
-                  <h2>注册成功......</h2>                       
-                  <p><a href="index.html">返回首页</a> <span class="divider">|</span> <a href="sign_in.html">进行登录</a></p>
+                  <h2>邮件发送成功，请到邮箱查收......</h2>
+		<h2>请注意，QQ邮箱可能存在发送失败情况，建议您使用除QQ邮箱外其他邮箱</h2>                       
+                  <p><a href="{% url 'index' %}">返回首页</a> <span class="divider">|</span> <a href="{% url 'login' %}">进行登录</a></p>
                 </div>
               </div>
             </div>

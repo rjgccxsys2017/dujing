@@ -59,7 +59,7 @@ class registerView(View):
 			user_profile.save()
 			
 			send_register_email(user_name,"register")
-			return render(request,"login.html")
+			return render(request,"email_send.html")
 		else:
 
 			return render(request,"register.html",{"register_form":register_form})
@@ -78,7 +78,7 @@ class loginView(View):
 			if user is not None:
 				if user.is_active:
 					login(request,user)
-					return render(request,"index.html")
+					return render(request,"register_success.html")
 				else:
 					return render(request, "login.html", {"msg": "用户名或密码错误!"})
 			else:
@@ -145,3 +145,7 @@ def user(request):
 
 def user_message(request):
 	return render(request,"user_message.html")
+def email_send(request):
+	return render(request,"email_send.html")
+def register_success(request):
+	return render(request,"register_success.html")

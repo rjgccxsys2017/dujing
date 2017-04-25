@@ -8,14 +8,14 @@
         <meta name="keywords" content="独景，旅游，博客" />
         <meta name="description" content="">
         <meta name="author" content="">
-        <link rel="shortcut icon" href="icon/Dicon.ico">
+        <link rel="shortcut icon" href="/static/icon/Dicon.ico">
        
         <title>独景网-个人信息</title>
 
             <!--   Le Styles  -->
-        <link rel="stylesheet" href="css/bootstrap.css"/>
-        <link rel="stylesheet" href="css/custom.css"/>
-        <link rel="stylesheet" href="css/login-register.css" />
+        <link rel="stylesheet" href="/static/css/bootstrap.css"/>
+        <link rel="stylesheet" href="/static/css/custom.css"/>
+        <link rel="stylesheet" href="/static/css/login-register.css" />
         <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
         <!-- HTML5 shim, for IE6-8 support of HTML5 elements  -->
         <!--[if lt IE 9]>
@@ -26,9 +26,20 @@
           <link href="//netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome-ie7.css" rel="stylesheet">
         <![endif]-->
         
-        <script type="text/javascript" src="js/jquery-2.0.0.min.js"></script>
-        <script type="text/javascript" src="js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="js/modernizr.custom.js"></script>
+        <script type="text/javascript" src="/static/js/jquery-2.0.0.min.js"></script>
+        <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/static/js/modernizr.custom.js"></script>
+        <style type="text/css">
+      .copyright {
+    background: #111;
+    font-size: 13px;
+    text-align: center;
+    color: #555555;
+    padding-top: 28px;
+    padding-bottom: 28px;
+    border-top: 1px solid #303030;
+}
+    </style>
     </head>
 
 <body>
@@ -50,10 +61,10 @@
 
                         <div class="collapse navbar-collapse" id="demo-navbar">
                             <ul class="nav navbar-nav">
-                                <li class="active"><a href="index.html">首页</a></li>
-                                <li><a href="djread.html">读景</a></li>
-                                <li><a href="djsearch.html">寻景</a></li>
-                                <li><a href="user.html">用户</a></li>
+                                <li class="active"><a href="{% url 'index' %}">首页</a></li>
+                                <li><a href="{% url 'djread' %}">读景</a></li>
+                                <li><a href="{% url 'djsearch' %}">寻景</a></li>
+                                <li><a href="{% url 'user' %}">用户</a></li>
                                 <li><a href="##" data-toggle="modal" data-target="#about">关于</a></li>
                             </ul>
                         </div>
@@ -92,7 +103,7 @@
             <div class="panel-heading panel-header">个人信息</div>
             <div class="panel-body">
                   <div class="col-md-4 col-sm-12 col-xs-12">
-                    <img id="userimage" src="image/profile.png" alt="user">
+                    <img id="userimage" src="/static/image/profile.png" alt="user">
                      <a href="#" class="btn btn-primary">修改头像</a>
                      <a href="#" class="btn btn-success">修改密码</a>
                   </div>
@@ -166,8 +177,8 @@
                 <div class="row">
                   <div class="col-xs-12">
                     <div class="input-group">
-                      <label class="sr-only" for="subscribe-email">请输入你的要求...</label>
-                      <input type="email" class="form-control" id="subscribe-email" placeholder="请输入你的要求...">
+                      <label class="sr-only" for="subscribe-email">请输入你的邮箱...</label>
+                      <input email="email1" type="email" class="form-control" id="subscribe-email" placeholder="请输入你的邮箱...">
                       <span class="input-group-btn">
                         <button type="submit" class="btn btn-success">发 送</button>
                       </span>
@@ -180,7 +191,13 @@
           </div>
         </div>   
   </footer>
-
+<div class="copyright wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">
+        <div class="container">
+          <span>Copyright &copy; <a style= "color:#555555" href="http://2017.jsjds.org/">2017 中国大学生计算机设计大赛比赛用&nbsp&nbsp|&nbsp&nbsp</a></span>
+                    <span><a style= "color:#555555" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=34019102000116" target="_blank"><img src="/static/image/beian.png" alt="police beian" >皖公网安备 34019102000116号</a></span></center> 
+     
+        </div>
+      </div>
 
 
 </body>

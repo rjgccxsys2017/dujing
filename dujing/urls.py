@@ -21,7 +21,7 @@ from django.views.generic import TemplateView
 import xadmin
 
 from account.views import loginView,registerView,ActiveUserView,liuyan,ForgetPwdView,ResetView,djread,djsearch,user,user_message
-
+from account.views import register_success,email_send
 urlpatterns = [
     url(r'^xadmin/', include(xadmin.site.urls)),
    # url(r'^message/$',message,name='message'),
@@ -38,6 +38,8 @@ urlpatterns = [
     url(r'^user/$',user,name="user"),
     url(r'^djsearch/$',djsearch,name="djsearch"),
     url(r'^user_message/$',user_message,name="user_message"),
+    url(r'^register_success/$',register_success,name="register_success"),
+    url(r'^email_send/$',email_send,name="email_send"),
 
  
 

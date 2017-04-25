@@ -29,6 +29,17 @@
         <script type="text/javascript" src="/static/js/jquery-2.0.0.min.js"></script>
         <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="/static/js/modernizr.custom.js"></script>
+        <style type="text/css">
+      .copyright {
+    background: #111;
+    font-size: 13px;
+    text-align: center;
+    color: #555555;
+    padding-top: 28px;
+    padding-bottom: 28px;
+    border-top: 1px solid #303030;
+}
+    </style>
     </head>
 
 <body>
@@ -45,7 +56,7 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a href="index.html" class="navbar-brand">独景网</a>
+                            <a href="{% url 'index' %}" class="navbar-brand">独景网</a>
                         </div>
 
                         <div class="collapse navbar-collapse" id="demo-navbar">
@@ -269,8 +280,8 @@
                 <div class="row">
                   <div class="col-xs-12">
                     <div class="input-group">
-                      <label class="sr-only" for="subscribe-email">请输入你的要求...</label>
-                      <input type="email" class="form-control" id="subscribe-email" placeholder="请输入你的要求...">
+                      <label class="sr-only" for="subscribe-email">请输入你的邮箱...</label>
+                      <input name="email1" type="email" class="form-control" id="subscribe-email" placeholder="请输入你的邮箱...">
                       <span class="input-group-btn">
                         <button type="submit" class="btn btn-success">发 送</button>
                       </span>
@@ -283,6 +294,13 @@
           </div>
         </div>   
   </footer>
+  <div class="copyright wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">
+        <div class="container">
+          <span>Copyright &copy; <a style= "color:#555555" href="http://2017.jsjds.org/">2017 中国大学生计算机设计大赛比赛用&nbsp&nbsp|&nbsp&nbsp</a></span>
+                    <span><a style= "color:#555555" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=34019102000116" target="_blank"><img src="/static/image/beian.png" alt="police beian" >皖公网安备 34019102000116号</a></span></center> 
+     
+        </div>
+      </div>
 
 
 

@@ -58,7 +58,11 @@
 							<a href="{% url 'index' %}" class="navbar-brand">独景网</a>
 						</div>
 
-						<div class="collapse navbar-collapse" id="demo-navbar">
+						
+							{% if request.user.is_authenticated %}
+
+
+							<div class="collapse navbar-collapse" id="demo-navbar">
 							<ul class="nav navbar-nav">
 								<li class="active"><a href="{% url 'index' %}">首页</a></li>
 								<li><a href="{% url 'djread' %}">读景</a></li>
@@ -67,10 +71,29 @@
 								<li><a href="##" data-toggle="modal" data-target="#about">关于</a></li>
 							</ul>
 							<ul class="nav navbar-nav navbar-right">
-								 <li><a class="btn big-default" href="{% url 'login' %}">登录</a></li>
-                                <li><a class="btn big-default" href="{% url 'register' %}">注册</a></li>
+
+							 
+								<li><a class="btn big-default" href="{% url 'user' %}">个人中心</a></li>
+                                <li><a class="btn big-default" href="{% url 'login' %}">退出</a></li>
+                                </ul></div>
+
+							 		{% else %}
+							 		<div class="collapse navbar-collapse" id="demo-navbar">
+							<ul class="nav navbar-nav">
+								<li class="active"><a href="{% url 'index' %}">首页</a></li>
+								<li><a href="{% url 'djread' %}">读景</a></li>
+								<li><a href="{% url 'djsearch' %}">寻景</a></li>
+								<li><a href="{% url 'user' %}">用户</a></li>
+								<li><a href="##" data-toggle="modal" data-target="#about">关于</a></li>
 							</ul>
-						</div>
+									<ul class="nav navbar-nav navbar-right">
+								 	<li><a class="btn big-default" href="{% url 'login' %}">登陆</a></li>
+                                	<li><a class="btn big-default" href="{% url 'register' %}">注册</a></li>
+
+                               
+									</ul></div>
+							{% endif %}
+						
 					</div><!-- col-sm -->
 				</div><!--  row -->
 			</div><!-- contaioner -->
@@ -407,8 +430,8 @@
                 <div class="row">
                   <div class="col-xs-12">
                     <div class="input-group">
-                      <label class="sr-only" for="subscribe-email">请输入你的要求...</label>
-                      <input type="email" class="form-control" id="subscribe-email" placeholder="请输入你的要求...">
+                      <label class="sr-only" for="subscribe-email">请输入你的邮箱...</label>
+                      <input name="email1" type="email" class="form-control" id="subscribe-email" placeholder="请输入你的邮箱...">
                       <span class="input-group-btn">
                         <button type="submit" class="btn btn-success">发 送</button>
                       </span>
