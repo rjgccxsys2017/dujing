@@ -1,0 +1,8 @@
+pip install django==1.9
+pip install xadmin
+pip uninstall xadmin
+pip install django-simple-captcha
+pip install DjangoUeditor
+pip install Pillow
+apt-get install nginx
+ 
