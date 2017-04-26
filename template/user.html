@@ -31,30 +31,26 @@
         <script type="text/javascript" src="http://image.cangye.me//static/js/modernizr.custom.js"></script>
 
                 <!-- Ueditor -->
-        <script type="text/javascript" charset="utf-8" src="/static/editor/ueditor.config.js"></script>
-        <script type="text/javascript" charset="utf-8" src="/static/editor/ueditor.all.min.js"> </script>
-        <script type="text/javascript" charset="utf-8" src="/static/editor/lang/zh-cn/zh-cn.js"></script>
+        <script type="text/javascript" charset="utf-8" src="/static/ueditor/ueditor.config.js"></script>
+        <script type="text/javascript" charset="utf-8" src="/static/ueditor/ueditor.all.min.js"> </script>
+        <script type="text/javascript" charset="utf-8" src="/static/ueditor/lang/zh-cn/zh-cn.js"></script>
 <style type="text/css">
         .copyright {
     background: #111;
     font-size: 13px;
     text-align: center;
     color: #555555;
-    padding-top: 28px;
+    padding-t/op: 28px;
     padding-bottom: 28px;
     border-top: 1px solid #303030;
 }</style>
-    <style type="text/css">
-        div{
-            width:100%;
-        }
-    </style>
+   
 </head>
 
 <body>
                                
     <div class="navigation">
-        <nav class="navbar navbar-default navbar-fixed-top">
+        <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-offset-3 col-md-9 col-sm-12 col-xs-12">
@@ -107,7 +103,7 @@
             <img class="profile-image img-responsive pull-left" src="http://image.cangye.me//static/image/profile.png" alt="James Lee" />
             <div class="profile-content pull-left">
                 <h1 class="name">剑起沧澜</h1>
-                <h2 class="">旅行爱好者</h2>   
+                <h2 class="desc">旅行爱好者</h2>   
                 <ul class="social list-inline">
                     <li><a href="#"><i class="fa fa-twitter"></i></a></li>                   
                     <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
@@ -127,12 +123,12 @@
                 <div class="primary col-md-8 col-sm-12 col-xs-12">
                 <form action="server.php" method="post">
                     <!-- 加载编辑器的容器 -->
-                    <script id="editor" name="content" type="text/plain" style="width:700px;height:500px;">
-                        在这里开始你的游记
+                    <script id="editor" name="content" type="text/plain" style="width:700px;height:500px">
+                        <p>在这里开始你的游记<p>
                     </script>
                 </form>
 
-                </div><!-- /. primary -->
+                </div>
 
 
 
@@ -141,6 +137,21 @@
 
                     <div class="panel-group" id="help-nav">
 
+                      <div class="panel">
+                        <div class="panel-heading bg-panelh">
+                          <a data-toggle="collapse" data-parent="#help-nav" href="#help-nav-one">
+                            博客等级
+                          </a>
+                        </div>
+                        <div id="help-nav-one" class="panel-collapse collapse in">
+                          <div class="panel-body bg-panelb">
+                            <p>
+                              已发表21篇
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                     
                      <div class="panel">
                         <div class="panel-heading bg-panelh">
                           <a data-toggle="collapse" data-parent="#help-nav" href="#help-nav-two" class="collapsed">
@@ -156,21 +167,6 @@
                         </div>
                       </div>
 
-                      <div class="panel">
-                        <div class="panel-heading bg-panelh">
-                          <a data-toggle="collapse" data-parent="#help-nav" href="#help-nav-one">
-                            博客等级
-                          </a>
-                        </div>
-                        <div id="help-nav-one" class="panel-collapse collapse in">
-                          <div class="panel-body bg-panelb">
-                            <p>
-                              ...................................................
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                     
                       <div class="panel">
                         <div class="panel-heading bg-panelh">
                           <a data-toggle="collapse" data-parent="#help-nav" href="#help-nav-three" class="collapsed">
